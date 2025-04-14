@@ -1,0 +1,11 @@
+D:\programacion\C#\UberEats\UberEats.Core.Domain\bin\Debug\net9.0\UberEats.Core.Domain.deps.json
+D:\programacion\C#\UberEats\UberEats.Core.Domain\bin\Debug\net9.0\UberEats.Core.Domain.dll
+D:\programacion\C#\UberEats\UberEats.Core.Domain\bin\Debug\net9.0\UberEats.Core.Domain.pdb
+D:\programacion\C#\UberEats\UberEats.Core.Domain\obj\Debug\net9.0\UberEats.Core.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\programacion\C#\UberEats\UberEats.Core.Domain\obj\Debug\net9.0\UberEats.Core.Domain.AssemblyInfoInputs.cache
+D:\programacion\C#\UberEats\UberEats.Core.Domain\obj\Debug\net9.0\UberEats.Core.Domain.AssemblyInfo.cs
+D:\programacion\C#\UberEats\UberEats.Core.Domain\obj\Debug\net9.0\UberEats.Core.Domain.csproj.CoreCompileInputs.cache
+D:\programacion\C#\UberEats\UberEats.Core.Domain\obj\Debug\net9.0\UberEats.Core.Domain.dll
+D:\programacion\C#\UberEats\UberEats.Core.Domain\obj\Debug\net9.0\refint\UberEats.Core.Domain.dll
+D:\programacion\C#\UberEats\UberEats.Core.Domain\obj\Debug\net9.0\UberEats.Core.Domain.pdb
+D:\programacion\C#\UberEats\UberEats.Core.Domain\obj\Debug\net9.0\ref\UberEats.Core.Domain.dll

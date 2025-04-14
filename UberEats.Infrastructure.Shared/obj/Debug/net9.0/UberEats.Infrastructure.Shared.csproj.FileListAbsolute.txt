@@ -1,0 +1,17 @@
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\bin\Debug\net9.0\UberEats.Infrastructure.Shared.deps.json
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\bin\Debug\net9.0\UberEats.Infrastructure.Shared.dll
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\bin\Debug\net9.0\UberEats.Infrastructure.Shared.pdb
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\bin\Debug\net9.0\UberEats.Core.Application.dll
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\bin\Debug\net9.0\UberEats.Core.Domain.dll
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\bin\Debug\net9.0\UberEats.Core.Application.pdb
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\bin\Debug\net9.0\UberEats.Core.Domain.pdb
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\obj\Debug\net9.0\UberEats.Infrastructure.Shared.csproj.AssemblyReference.cache
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\obj\Debug\net9.0\UberEats.Infrastructure.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\obj\Debug\net9.0\UberEats.Infrastructure.Shared.AssemblyInfoInputs.cache
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\obj\Debug\net9.0\UberEats.Infrastructure.Shared.AssemblyInfo.cs
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\obj\Debug\net9.0\UberEats.Infrastructure.Shared.csproj.CoreCompileInputs.cache
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\obj\Debug\net9.0\UberEats.6ABED513.Up2Date
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\obj\Debug\net9.0\UberEats.Infrastructure.Shared.dll
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\obj\Debug\net9.0\refint\UberEats.Infrastructure.Shared.dll
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\obj\Debug\net9.0\UberEats.Infrastructure.Shared.pdb
+D:\programacion\C#\UberEats\UberEats.Infrastructure.Shared\obj\Debug\net9.0\ref\UberEats.Infrastructure.Shared.dll

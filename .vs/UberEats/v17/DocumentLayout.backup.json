@@ -1,0 +1,375 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\programacion\\C#\\UberEats\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{832E41AE-5E92-4BB3-9053-6DC7CC939E0B}|UberEats.Core.Domain\\UberEats.Core.Domain.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.domain\\entities\\restaurant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{832E41AE-5E92-4BB3-9053-6DC7CC939E0B}|UberEats.Core.Domain\\UberEats.Core.Domain.csproj|solutionrelative:ubereats.core.domain\\entities\\restaurant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|d:\\programacion\\c#\\ubereats\\ubereats\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|solutionrelative:ubereats\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|d:\\programacion\\c#\\ubereats\\ubereats\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|solutionrelative:ubereats\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.application\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.application\\dto\\loginresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\dto\\loginresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.application\\interfaces\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\interfaces\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.application\\interfaces\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\interfaces\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE16167E-A9C8-458A-914F-2F873FE7F650}|UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj|d:\\programacion\\c#\\ubereats\\ubereats.infrastructure.persistence\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE16167E-A9C8-458A-914F-2F873FE7F650}|UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj|solutionrelative:ubereats.infrastructure.persistence\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.application\\interfaces\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\interfaces\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|d:\\programacion\\c#\\ubereats\\ubereats\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|solutionrelative:ubereats\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.application\\viewmodels\\user\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\viewmodels\\user\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|d:\\programacion\\c#\\ubereats\\ubereats\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|solutionrelative:ubereats\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.application\\serviceregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\serviceregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{832E41AE-5E92-4BB3-9053-6DC7CC939E0B}|UberEats.Core.Domain\\UberEats.Core.Domain.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{832E41AE-5E92-4BB3-9053-6DC7CC939E0B}|UberEats.Core.Domain\\UberEats.Core.Domain.csproj|solutionrelative:ubereats.core.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.application\\interfaces\\services\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\interfaces\\services\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.application\\helpers\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\helpers\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.application\\helpers\\ipasswordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\helpers\\ipasswordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|d:\\programacion\\c#\\ubereats\\ubereats.core.application\\viewmodels\\user\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\viewmodels\\user\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Restaurant.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Domain\\Entities\\Restaurant.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Domain\\Entities\\Restaurant.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Domain\\Entities\\Restaurant.cs*",
+              "RelativeToolTip": "UberEats.Core.Domain\\Entities\\Restaurant.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T01:39:53.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Application\\Services\\AuthService.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Services\\AuthService.cs",
+              "RelativeToolTip": "UberEats.Core.Application\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T04:37:10.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Infrastructure.Persistence\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "UberEats.Infrastructure.Persistence\\Repositories\\UserRepository.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Infrastructure.Persistence\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "UberEats.Infrastructure.Persistence\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAiwDEAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T04:03:59.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Application\\Services\\UserService.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Services\\UserService.cs",
+              "RelativeToolTip": "UberEats.Core.Application\\Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T03:23:15.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "UberEats\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "UberEats\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T05:28:29.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Interfaces\\Services\\IUserService.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Application\\Interfaces\\Services\\IUserService.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Interfaces\\Services\\IUserService.cs",
+              "RelativeToolTip": "UberEats.Core.Application\\Interfaces\\Services\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T04:22:57.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginResult.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\DTO\\LoginResult.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Application\\DTO\\LoginResult.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\DTO\\LoginResult.cs",
+              "RelativeToolTip": "UberEats.Core.Application\\DTO\\LoginResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T05:14:33.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Interfaces\\Services\\IAuthService.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Application\\Interfaces\\Services\\IAuthService.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Interfaces\\Services\\IAuthService.cs",
+              "RelativeToolTip": "UberEats.Core.Application\\Interfaces\\Services\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T04:24:36.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Services\\LoginService.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Application\\Services\\LoginService.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Services\\LoginService.cs",
+              "RelativeToolTip": "UberEats.Core.Application\\Services\\LoginService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAswDIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T05:17:06.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "UberEats\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats\\Controllers\\UserController.cs",
+              "RelativeToolTip": "UberEats\\Controllers\\UserController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAADgvyIAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T05:55:17.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats\\Program.cs",
+              "RelativeDocumentMoniker": "UberEats\\Program.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats\\Program.cs",
+              "RelativeToolTip": "UberEats\\Program.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAcwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T05:51:40.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats\\appsettings.json",
+              "RelativeDocumentMoniker": "UberEats\\appsettings.json",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats\\appsettings.json",
+              "RelativeToolTip": "UberEats\\appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-13T05:31:02.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Interfaces\\Repositories\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Application\\Interfaces\\Repositories\\IUserRepository.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Interfaces\\Repositories\\IUserRepository.cs",
+              "RelativeToolTip": "UberEats.Core.Application\\Interfaces\\Repositories\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T04:23:47.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\ViewModels\\User\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Application\\ViewModels\\User\\LoginViewModel.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\ViewModels\\User\\LoginViewModel.cs",
+              "RelativeToolTip": "UberEats.Core.Application\\ViewModels\\User\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T04:22:09.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ServiceRegister.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\ServiceRegister.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Application\\ServiceRegister.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\ServiceRegister.cs",
+              "RelativeToolTip": "UberEats.Core.Application\\ServiceRegister.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T05:29:45.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PasswordHasher.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Helpers\\PasswordHasher.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Application\\Helpers\\PasswordHasher.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Helpers\\PasswordHasher.cs",
+              "RelativeToolTip": "UberEats.Core.Application\\Helpers\\PasswordHasher.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAEAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T04:31:37.905Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Domain\\Entities\\User.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "UberEats.Core.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T05:11:38.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ILoginService.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Interfaces\\Services\\ILoginService.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Application\\Interfaces\\Services\\ILoginService.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Interfaces\\Services\\ILoginService.cs",
+              "RelativeToolTip": "UberEats.Core.Application\\Interfaces\\Services\\ILoginService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T05:15:51.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IPasswordHasher.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Helpers\\IPasswordHasher.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Application\\Helpers\\IPasswordHasher.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\Helpers\\IPasswordHasher.cs",
+              "RelativeToolTip": "UberEats.Core.Application\\Helpers\\IPasswordHasher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T04:31:26.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UserViewModel.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\ViewModels\\User\\UserViewModel.cs",
+              "RelativeDocumentMoniker": "UberEats.Core.Application\\ViewModels\\User\\UserViewModel.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEats\\UberEats.Core.Application\\ViewModels\\User\\UserViewModel.cs",
+              "RelativeToolTip": "UberEats.Core.Application\\ViewModels\\User\\UserViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T04:22:11.241Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1042,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

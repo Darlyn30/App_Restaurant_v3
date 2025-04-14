@@ -1,0 +1,25 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using UberEats.Core.Application.Interfaces.Repositories;
+using UberEats.Infrastructure.Persistence.Contexts;
+using UberEats.Infrastructure.Persistence.Repositories;
+
+namespace UberEats.Infrastructure.Persistence
+{
+    public static class ServiceRegister
+    {
+        public static void AddPersistenceInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        {
+            #region contexts
+            services.AddDbContext<ApplicationContext>(options =>
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
+            m => m.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
+            #endregion
+
+            #region repositories
+            services.AddTransient<IUserRepository, UserRepository>();
+            #endregion
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "3Y39g0OcqxZK0vD60jtyeKNGQZNL8xqDUFxltMRMd5A=",
+  "Source": "WebApi.UberEats",
+  "BasePath": "_content/WebApi.UberEats",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

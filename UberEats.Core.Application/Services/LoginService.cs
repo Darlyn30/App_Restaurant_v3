@@ -1,10 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UberEats.Core.Application.DTO;
+using UberEats.Core.Application.DTO.Account;
 using UberEats.Core.Application.Helpers;
 using UberEats.Core.Application.Interfaces.Repositories;
 using UberEats.Core.Application.Interfaces.Services;
@@ -36,6 +31,10 @@ namespace UberEats.Core.Application.Services
             if (!_passwordHasher.VerifyHashedPassword(model.Password, user.PasswordHash))
                 return new LoginResult { IsSuccess = false, Message = "Contraseña incorrecta" };
 
+            if (!user.IsActive)
+                return new LoginResult { IsSuccess = false, Message = "Usuario no verificado" };
+
+            // solo si el usuario esta verificado
             // Generar JWT
             var token = await _authService.GenerateJwtTokenAsync(user);
             return new LoginResult 
@@ -47,6 +46,7 @@ namespace UberEats.Core.Application.Services
                     Id = user.Id,
                     Name = user.Name,
                     Email = user.Email,
+                    IsActive = user.IsActive,
                     Role = user.Role
                 }
             };

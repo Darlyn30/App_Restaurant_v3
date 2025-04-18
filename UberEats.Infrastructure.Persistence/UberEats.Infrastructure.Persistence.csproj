@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\UberEats.Core.Application\UberEats.Core.Application.csproj" />
     <ProjectReference Include="..\UberEats.Core.Domain\UberEats.Core.Domain.csproj" />
+    <ProjectReference Include="..\UberEats.Infrastructure.Shared\UberEats.Infrastructure.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

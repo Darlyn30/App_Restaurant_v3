@@ -2,58 +2,53 @@ CREATE DATABASE UberEatsDb
 
 USE UberEatsDb
 
-CREATE TABLE Users (
-    Id INT PRIMARY KEY IDENTITY(1,1),
-    Name NVARCHAR(100) NOT NULL,
-    Email NVARCHAR(100) NOT NULL,
-    PasswordHash NVARCHAR(MAX) NOT NULL,
+CREATE TABLE Users
+(
+	Id INT IDENTITY(1,1),
+	Name VARCHAR(50) NOT NULL,
+	Email VARCHAR(100) NOT NULL,
 	IsActive BIT,
-    Role NVARCHAR(50) NOT NULL -- Ej: "Cliente", "Repartidor", "Admin"
+	PasswordHash NVARCHAR(MAX) NOT NULL,
+	Pin VARCHAR(6) NOT NULL,
+	Role VARCHAR(20),
+	PRIMARY KEY(Email)
 )
 
-select * from Users
-
-delete from Users
+SELECT * FROM Users
 
 
-
-CREATE TABLE Restaurants (
-    Id INT PRIMARY KEY IDENTITY(1,1),
-    Name NVARCHAR(100) NOT NULL,
-    Adress NVARCHAR(200) NOT NULL
+CREATE TABLE UnverifiedAccounts
+(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	Pin VARCHAR(6) NOT NULL,
+	Email VARCHAR(100) NOT NULL,
+	Name VARCHAR(50) NOT NULL,
+	--NO NECESITO EL HASH AQUI
 )
 
-CREATE TABLE Categories (
-    Id INT PRIMARY KEY IDENTITY(1,1),
-    Name NVARCHAR(100) NOT NULL
-)
 
-CREATE TABLE Products (
-    Id INT PRIMARY KEY IDENTITY(1,1),
-    Name NVARCHAR(100) NOT NULL,
-    Price DECIMAL(10, 2) NOT NULL,
-    CategoryId INT NOT NULL,
-    RestaurantId INT NOT NULL,
-    FOREIGN KEY (CategoryId) REFERENCES Categories(Id),
-    FOREIGN KEY (RestaurantId) REFERENCES Restaurants(Id)
-)
+CREATE TRIGGER GetPIN
+ON Users
+AFTER INSERT
+AS
+BEGIN
+	INSERT INTO UnverifiedAccounts(Email, Pin, Name)
+	SELECT Email, Pin, Name
+	FROM inserted
+END
 
-CREATE TABLE Orders (
-    Id INT PRIMARY KEY IDENTITY(1,1),
-    UserId INT NOT NULL,
-    RestaurantId INT NOT NULL,
-    DateOrder DATETIME NOT NULL DEFAULT GETDATE(),
-    Status NVARCHAR(50) NOT NULL, -- Ej: "Pendiente", "Preparando", "En camino", "Entregado"
-    FOREIGN KEY (UserId) REFERENCES Users(Id),
-    FOREIGN KEY (RestaurantId) REFERENCES Restaurants(Id)
-)
 
-CREATE TABLE OrderDetails (
-    Id INT PRIMARY KEY IDENTITY(1,1),
-    OrderId INT NOT NULL,
-    ProductId INT NOT NULL,
-    Quantity INT NOT NULL,
-    UnitPrice DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (OrderId) REFERENCES Orders(Id),
-    FOREIGN KEY (ProductId) REFERENCES Products(Id)
-)
+CREATE TRIGGER changeStatus
+ON Users
+INSTEAD OF DELETE
+AS
+BEGIN
+	    -- Actualizamos el campo Estatus en la tabla cuentas
+    UPDATE u
+    SET u.IsActive = 1  -- Cambia Estatus a 1 (activo)
+    FROM Users AS u
+    INNER JOIN deleted AS d ON u.Email = d.Email;
+
+    -- Ahora procedemos con la eliminaci?n del registro en cuenta_creadas
+    DELETE FROM UnverifiedAccounts
+END

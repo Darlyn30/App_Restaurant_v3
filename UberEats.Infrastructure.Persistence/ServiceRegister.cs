@@ -2,8 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using UberEats.Core.Application.Interfaces.Repositories;
+using UberEats.Core.Application.Interfaces.Services;
 using UberEats.Infrastructure.Persistence.Contexts;
 using UberEats.Infrastructure.Persistence.Repositories;
+using UberEats.Infrastructure.Shared.Services;
 
 namespace UberEats.Infrastructure.Persistence
 {

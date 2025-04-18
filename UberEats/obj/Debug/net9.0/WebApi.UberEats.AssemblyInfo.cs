@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("a9235ff6-11f2-41a6-8328-a15aa8ed682e")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApi.UberEats")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54c0f3bf2b0e8c2c0ce4a7a3e852aeb791c3f11c")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApi.UberEats")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApi.UberEats")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using UberEats.Core.Domain.Entities;
 
 namespace UberEats.Infrastructure.Persistence.Contexts
@@ -9,11 +10,16 @@ namespace UberEats.Infrastructure.Persistence.Contexts
         {
         }
 
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Restaurant> Restaurants { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<UnverifiedAccount> UnverifiedAccounts { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>()
+                .ToTable(tb => tb.HasTrigger("GetPIN"));
+
+            modelBuilder.Entity<UnverifiedAccount>()
+                .ToTable(tb => tb.HasTrigger("changeStatus"));
+        }
     }
 }

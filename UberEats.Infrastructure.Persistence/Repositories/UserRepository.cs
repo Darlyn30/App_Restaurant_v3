@@ -1,7 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using UberEats.Core.Application.Interfaces.Repositories;
 using UberEats.Core.Domain.Entities;
+using UberEats.Core.Domain.Settings;
 using UberEats.Infrastructure.Persistence.Contexts;
+using UberEats.Infrastructure.Shared.Services;
 
 namespace UberEats.Infrastructure.Persistence.Repositories
 {

@@ -11,9 +11,11 @@ namespace WebApi.UberEats.Controllers
     public class AccountController : ControllerBase
     {
         private readonly ILoginService _loginService;
-        public AccountController(ILoginService loginService)
+        private readonly UserViewModel _userVm;
+        public AccountController(ILoginService loginService, UserViewModel userVm)
         {
             _loginService = loginService;
+            _userVm = userVm;
         }
 
         [HttpPost("login")]
@@ -25,6 +27,11 @@ namespace WebApi.UberEats.Controllers
             var result = await _loginService.LoginAsync(model);
             if (!result.IsSuccess)
                 return Unauthorized(result.Message);
+
+            if (!_userVm.IsActive)
+            {
+                return BadRequest(new {message = "Account is not verified"});
+            }
 
             return Ok(new { token = result.Token, userVm = result.UserVm});
         }

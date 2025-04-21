@@ -36,16 +36,17 @@ namespace UberEats.Core.Application.Services
                 return false; // User already exists
             }
 
+            var pin = _random.pinRandom();
             var user = new User
             {
                 Name = model.Name,
                 PasswordHash = _passwordHasher.HashPassword(model.Password),
                 Email = model.Email,
-                Pin = model.Pin
+                Pin = pin,
+                Role = "Client"
             };
 
 
-            model.Pin = _random.pinRandom();
             _mailModel.To = model.Email;
             _mailModel.SupportEmail = _config.GetSection("EmailSettings:Email").Value;
 
@@ -53,7 +54,7 @@ namespace UberEats.Core.Application.Services
              $"<p>Estimado/a {model.Name},</p>" +
              $"<p>Gracias por registrarte en {_mailModel.EnterpriseName}. Para garantizar la seguridad de tu cuenta, hemos generado un código de verificación único.</p>" +
              $"<p><strong>Tu código de verificación es:</strong></p>" +
-             $"<p style=\"font-size: 18px; font-weight: bold; color: #2C3E50;\">{model.Pin}</p>" +
+             $"<p style=\"font-size: 18px; font-weight: bold; color: #2C3E50;\">{pin}</p>" +
              $"<p>Por favor, ingresa este código en el formulario de nuestra aplicación para completar el proceso de verificación.</p>" +
              $"<p>Si no solicitaste este código, por favor ignora este correo.</p>" +
              $"<p>En caso de cualquier duda, no dudes en ponerte en contacto con nosotros a través de <a href=\"mailto:{_mailModel.SupportEmail}\">{_mailModel.SupportEmail}</a>.</p>" +

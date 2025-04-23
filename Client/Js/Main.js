@@ -9,9 +9,20 @@ const submitBtn = document.getElementById('submitBtn');
 let isLogin = true;
 
 let id = 0;
-const URL_LOGIN = "https://localhost:7075/api/Account/login"; //POST
-const URL_SIGN_UP = "https://localhost:7075/api/User/register"; //POST
-const URL_GET_ID = `https://localhost:7075/api/User/${id}`; //GET
+
+
+let token = localStorage.getItem("token");
+console.log(token);
+if(token){
+  window.location = "../subpages/home/Home.html";
+}
+
+const URLS = {
+  URL_LOGIN : "https://localhost:7075/api/Account/login", //POST
+  URL_SIGN_UP : "https://localhost:7075/api/User", //POST
+  URL_GET_ID : `https://localhost:7075/api/User/${id}` //GET
+}
+
 
 // Tema claro/oscuro
 themeBtn.addEventListener('click', () => {
@@ -50,9 +61,9 @@ document.querySelectorAll('.toggle-password').forEach(icon => {
     });
 });
 
-
 //se asegura que el correo sea de google
 document.getElementById('authForm').addEventListener('submit', function(event) {
+
   const email = document.getElementById('email').value;
   const warningMessage = document.getElementById('warningMessage');
   
@@ -84,25 +95,13 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
   if (isLogin) {
       // Modo: Iniciar Sesión
       console.log('Datos de inicio de sesión:', emailValue, passwordValue);
-      // Aquí puedes agregar tu lógica para el inicio de sesión
-
-      // fetch(URL_LOGIN, {
-      //   method: 'POST',
-      //   headers : {
-      //     'Content-Type' : 'application/json'
-      //   },
-      //   body: JSON.stringify(emailValue, passwordValue)
-      // })
-      // .then(res => {
-      //   console.log("success", res);
-      // })
 
       const dataLogin = {
         Email: emailValue,
         Password: passwordValue
       }
 
-      fetch("https://localhost:7075/api/Account/login", {
+      fetch(URLS.URL_LOGIN, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -126,7 +125,12 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
           icon: "success",
         })
         .then(res => {
-          window.location = "../subpages/home.html";
+
+          
+          if(!data.userVm.isActive == true){
+            window.location = "../subpages/Verification.html";
+          }
+          window.location = "../subpages/home/Home.html";
         });
       })
       .catch(error => console.error("Catch error:", error));
@@ -139,12 +143,11 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
       const registerData = {
           name: nameValue,
           email: emailValue,
-          password: passwordValue,
-          Role : 'Client' // cuando se registre desde aqui, 
+          password: passwordValue, 
       };
       console.log('Datos de registro:', registerData);
 
-      fetch(URL_SIGN_UP, {
+      fetch(URLS.URL_SIGN_UP, {
         method: 'POST',
         headers : {
           'Content-Type' : 'application/json'
@@ -173,7 +176,7 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
               icon: "success",
           })
           .then(res => {
-              window.location = "../verification/verification.html";
+              window.location = "../subpages/verification/Verification.html";
           });
         }
       })

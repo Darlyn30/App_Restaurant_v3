@@ -21,6 +21,9 @@ namespace UberEats.Infrastructure.Persistence
 
             #region repositories
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IRestaurantRepository,  RestaurantRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IFoodRepository, FoodRepository>();
             #endregion
         }
     }

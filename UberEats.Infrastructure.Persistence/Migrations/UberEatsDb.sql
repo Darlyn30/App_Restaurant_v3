@@ -29,42 +29,103 @@ SELECT * FROM UnverifiedAccounts
 
 CREATE TABLE Categories
 (
-	Id INT IDENTITY(1,1) PRIMARY KEY,
-	Name VARCHAR(200) NOT NULL
+	Id  INT IDENTITY(1,1) PRIMARY KEY,
+	Name VARCHAR(50),
+	ImgUrl VARCHAR(MAX)
 )
 
-SELECT * FROM Categories
---INSERT INTO Categories(Name) VALUES ('Comida Rapida'), ('Tradicional/Comida Casera'), ('Gourmet/Comida Internacional')
+/*
+INSERT INTO Categories(Name, ImgUrl) VALUES ('Comida Japonesa', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3jj8mQv9ibd_Ta7HrhrhTHRA1HDW7jQXZmQ&s'),
+('Comida Dominicana', 'https://tuguiadominicana.com/wp-content/uploads/2023/02/plato-tipico-domonicano-@yolandazarzuela-edited.jpg'),
+('Bebidas', 'https://megaadventuresdr.com/wp-content/uploads/2019/03/Best-Drinks-1.jpg')
+*/
+
 
 CREATE TABLE Restaurants
 (
 	Id INT IDENTITY(1,1) PRIMARY KEY,
-	Name VARCHAR(200) NOT NULL,
-	CategoryId INT
+	Name VARCHAR(100),
+	Description VARCHAR(MAX),
+	CategoryId INT NOT NULL,
+	OpeningTime TIME,
+	ClosingTime TIME,
+	DeliveryAvailable BIT,
+	Active BIT,
+	ImgUrl VARCHAR(MAX),
 	FOREIGN KEY(CategoryId) REFERENCES Categories(Id)
 )
 
+SELECT * FROM Restaurants
 
-CREATE VIEW ViewRestaurantsCategories AS
-SELECT 
-    Restaurants.Name AS RestaurantName, 
-    Categories.Name AS CategoryName 
-FROM Restaurants
-INNER JOIN Categories
-ON Restaurants.CategoryId = Categories.Id
 
-SELECT * FROM ViewRestaurantsCategories
+CREATE TABLE Foods
+(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	Name VARCHAR(100),
+	Description VARCHAR(MAX),
+	Price DECIMAL(10,2),
+	RestaurantId INT,
+	Active BIT,
+	ImgUrl VARCHAR(MAX),
+	FOREIGN KEY (RestaurantId) REFERENCES Restaurants(Id)
+)
 
+SELECT * FROM Foods
 
 /*
-INSERT INTO Restaurants (Name, CategoryId) VALUES ('Pollo Rey', 1),
-('Jhonny Rockets', 3),
-('Popeyes', 1),
-('La Comidilla', 2),
-('TGI Fridays', 3)*/
+INSERT INTO Foods (Name, Description, Price, RestaurantId, Active)
+VALUES
+('Salchipapa', 'Salchicha con papa al vapor', 9.99, 3, 1),
+('Burrito', 'Rollo de tortilla con carne, arroz, frijoles y guacamole', 15.50, 3, 1),
+('Pasta Carbonara', 'Pasta con salsa cremosa de huevo, queso parmesano y panceta', 12.00, 3, 1),
+('Ramen', 'Sopa japonesa con fideos, caldo y vegetales', 14.00, 3, 1),
+('Burger Classic', 'Hamburguesa con carne, queso, lechuga y tomate', 8.50, 3, 1)
+*/
 
 
 
+
+
+CREATE TABLE ShoppingCar
+(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	UserId  UNIQUEIDENTIFIER,
+	CreationDate DATETIME
+)
+
+CREATE TABLE ShoppingCarItems
+(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	ShoppingCarId INT,
+	FoodId INT,
+	Quantity INT,
+	FOREIGN KEY(ShoppingCarId) REFERENCES ShoppingCar(Id),
+	FOREIGN KEY(FoodId) REFERENCES Foods(Id)
+)
+
+CREATE TABLE Orders
+(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	UserId UNIQUEIDENTIFIER,
+	RestaurantId INT,
+	Total DECIMAL(10,2),
+	Status VARCHAR(50),
+	OrderDate DATETIME,
+	FOREIGN KEY(RestaurantId) REFERENCES Restaurants(Id)
+)
+
+CREATE TABLE OrderDetails
+(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	OrderId INT NOT NULL,
+	FoodId INT NOT NULL,
+	Quantity INT NOT NULL,
+	UnitPrice DECIMAL(10,2) NOT NULL,
+	FOREIGN KEY(OrderId) REFERENCES Orders(Id),
+	FOREIGN KEY(FoodId) REFERENCES Foods(Id)
+)
+
+--para el usuario, uno obtiene el pin, y lo mete en la tabla de cuentas no verificadas
 CREATE TRIGGER GetPIN
 ON Users
 AFTER INSERT
@@ -75,7 +136,7 @@ BEGIN
 	FROM inserted
 END
 
-
+--despues de verificar la cuenta, borra de unverifiedAccounts --PENDIENTE DE ARREGLO
 CREATE TRIGGER changeStatus
 ON Users
 INSTEAD OF DELETE
@@ -89,5 +150,22 @@ BEGIN
 
 
     -- Ahora procedemos con la eliminaci?n del registro en cuenta_creadas
-    DELETE FROM UnverifiedAccounts
+    DELETE FROM UnverifiedAccounts --AQUI TENGO QUE HACER QUE EVALUE EL ID DE LA CUENTA QUE SE VERIFICA, YA QUE SI HAY VARIAS CUENTAS SIN VERIFICAR, ENTONCES, SE BORRARAN TODAS
 END
+
+--SP PARA CERRAR O ABRIR EL RESTAURANTE
+
+CREATE PROCEDURE SP_CloseRestaurants
+AS
+BEGIN
+	UPDATE Restaurants
+	SET Active = 
+	CASE
+		WHEN OpeningTime < ClosingTime AND CAST(GETDATE() AS TIME) BETWEEN OpeningTime AND ClosingTime THEN 1
+		WHEN OpeningTime > ClosingTime AND (
+			CAST(GETDATE() AS TIME) >= OpeningTime OR CAST(GETDATE() AS TIME) <= ClosingTime
+		) THEN 1
+		ELSE 0
+	END
+END
+

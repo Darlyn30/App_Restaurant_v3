@@ -1,298 +1,228 @@
-/* Reset básico y configuración general */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
-    font-size: 16px; /* Tamaño base para móviles */
-    line-height: 1.5;
-    padding-bottom: 60px; /* Espacio para la barra de navegación inferior */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-bottom: 60px; /* espacio para nav fija */
 }
-
-/* Encabezado */
-.header {
-    padding: 10px 15px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  
+.section {
+    padding: 20px;
 }
-
-.location {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 8px;
+  
+.hidden {
+    display: none;
+}
+  
+.search-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
 }
-
-.location a {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 12px;
-}
-
-.tabs {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    white-space: nowrap;
-}
-
-.tabs button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 20px;
-    background-color: #ddd;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
-}
-
-.tabs button.active {
-    background-color: #007bff;
-    color: #fff;
-}
-
-/* Barra de búsqueda */
-.search-bar {
-    margin: 10px 15px;
-}
-
-.search-bar input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 25px;
-    font-size: 14px;
-    background: url('https://via.placeholder.com/15?text=🔍') no-repeat 10px center;
-    padding-left: 35px;
-    background-size: 20px;
-}
-
-/* Categorías */
-.categories {
-    padding: 10px 15px;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en iOS */
-}
-
-.category-card {
-    display: inline-block;
-    width: 120px;
-    margin-right: 10px;
-    text-align: center;
-}
-
-.category-card img {
-    width: 100%;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.category-card p {
-    font-size: 12px;
-    margin-top: 5px;
-    color: #333;
-}
-
-/* Restaurantes */
-.restaurants {
-    padding: 10px 15px;
-}
-
-.restaurants h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.restaurant-card {
-    display: flex;
-    gap: 10px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.restaurant-card img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.restaurant-card div {
+  
+.search-container input {
     flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+  
+.search-container button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+  
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+  
+.card-category,
+.restaurant-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.2s;
+}
+  
+.card-category img,
+.restaurant-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
 }
 
-.restaurant-card h4 {
-    font-size: 14px;
-    color: #333;
+.card-category,
+.restaurant-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.restaurant-card p {
-    font-size: 12px;
-    color: #666;
+.card-category:hover,
+.restaurant-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-/* Barra de navegación inferior */
-.footer-nav {
+  
+.restaurant-card .open {
+    color: green;
+}
+  
+.restaurant-card .closed {
+    color: red;
+}
+  
+.bottom-nav {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #fff;
+    background: #eee;
     display: flex;
     justify-content: space-around;
-    padding: 8px 0;
-    border-top: 1px solid #ddd;
-    z-index: 10;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
 }
-
-.footer-nav a {
-    text-align: center;
-    color: #666;
+  
+.bottom-nav a {
     text-decoration: none;
-    font-size: 12px;
+    color: #555;
+    font-size: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
 }
-
-.footer-nav a.active {
+  
+.bottom-nav a.active {
     color: #007bff;
 }
 
-.footer-nav a::before {
-    content: '';
+
+.food-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+/* Cards de comida */
+.food-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    max-width: 240px;
+}
+  
+.food-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+  
+.food-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
     display: block;
-    width: 24px;
-    height: 24px;
-    background: url('https://via.placeholder.com/24?text=🏠') no-repeat center;
-    background-size: contain;
+}
+  
+.food-card .info {
+    padding: 12px;
+}
+  
+.food-card .info h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+  
+.food-card .info p {
+    margin: 6px 0;
+    color: #555;
+}
+  
+.food-card .price {
+    font-weight: bold;
+    color: #e91e63;
 }
 
-.footer-nav a:nth-child(2)::before {
-    background: url('https://via.placeholder.com/24?text=🔍') no-repeat center;
-}
 
-.footer-nav a:nth-child(3)::before {
-    background: url('https://via.placeholder.com/24?text=🛍️') no-repeat center;
-}
-
-.footer-nav a:nth-child(4)::before {
-    background: url('https://via.placeholder.com/24?text=👤') no-repeat center;
-}
-
-.header {
+.food-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    margin-bottom: 16px;
+}
+  
+.btn-close {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+  
+.btn-close:hover {
+    background-color: #c2185b;
 }
 
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.cart-icon {
-    font-size: 20px;
-    color: #333;
-    text-decoration: none;
-}
-
-.cart-icon:hover {
-    color: #f57c00;
-}
-
-/* Ajustes para pantallas más grandes (opcional) */
-@media (min-width: 768px) {
-    body {
-        font-size: 18px;
+@media (max-width: 768px) {
+    .food-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
     }
-
-    .header {
-        padding: 15px 30px;
+  
+    .food-header h3 {
+      font-size: 1.2rem;
     }
-
-    .location {
-        font-size: 16px;
+  
+    .btn-close {
+      align-self: stretch;
+      text-align: center;
     }
-
-    .location a {
-        font-size: 14px;
+  
+    .grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
     }
-
-    .tabs button {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-
-    .search-bar {
-        margin: 15px 30px;
-    }
-
-    .search-bar input {
-        font-size: 16px;
-        padding: 15px 20px 15px 40px;
-        background-size: 24px;
-    }
-
-    .categories {
-        padding: 15px 30px;
-    }
-
-    .category-card {
-        width: 150px;
-    }
-
-    .category-card img {
-        height: 100px;
-    }
-
-    .category-card p {
-        font-size: 14px;
-    }
-
-    .restaurants {
-        padding: 15px 30px;
-    }
-
-    .restaurants h3 {
-        font-size: 20px;
-    }
-
-    .restaurant-card img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .restaurant-card h4 {
-        font-size: 16px;
-    }
-
-    .restaurant-card p {
-        font-size: 14px;
-    }
-
-    .footer-nav {
-        padding: 10px 0;
-    }
-
-    .footer-nav a {
-        font-size: 14px;
+  
+    .food-card img {
+      height: 140px;
+      object-fit: cover;
     }
 }
+  
+@media (max-width: 480px) {
+    .food-header h3 {
+      font-size: 1rem;
+    }
+
+    .btn-close {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+    }
+  
+    .food-card .info p {
+      font-size: 0.85rem;
+    }
+}
+  

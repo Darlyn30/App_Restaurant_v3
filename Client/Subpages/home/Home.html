@@ -1,75 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - App de Comida</title>
-    <!-- Agrega esto dentro del <head> para íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link rel="stylesheet" href="./Home.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>App de Comida</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="./Home.css" />
 </head>
 <body>
-    <div class="header">
-        <div class="location">
-            Entregar en: Av. Principal 123, Ciudad <a href="#">[Cambiar]</a>
-        </div>
-        <div class="header-right">
-            <div class="tabs">
-                <button class="active">Entrega</button>
-                <button>Recogida</button>
-            </div>
-            <a href="../carrito/Carrito.html" class="cart-icon">
-                <i class="fas fa-shopping-cart"></i>
-            </a>
-        </div>
+
+  <!-- INICIO -->
+  <section id="home-section" class="section">
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Busca restaurantes, comida o cuisines..."/>
+      <button id="search-btn"><i class="fas fa-search"></i></button>
     </div>
 
-    <div class="search-bar">
-        <input type="text" placeholder="Busca restaurantes, comida o cuisines...">
+    <h2>Categorías</h2>
+    <div id="category-list" class="grid">
+        <!-- CONTENIDO DINAMICO -->
     </div>
 
-    <div class="categories">
-        <div class="category-card">
-            <img src="https://via.placeholder.com/150" alt="Entrega Rápida">
-            <p>Entrega Rápida</p>
-        </div>
-        <div class="category-card">
-            <img src="https://via.placeholder.com/150" alt="Nuevos">
-            <p>Nuevos en App</p>
-        </div>
-        <div class="category-card">
-            <img src="https://via.placeholder.com/150" alt="Comida Local">
-            <p>Comida Local</p>
-        </div>
+    <h2>Restaurantes</h2>
+    <div id="restaurant-list" class="grid">
+        <!-- CONTENIDO DINAMICO -->
     </div>
+  </section>
 
-    <div class="restaurants">
-        <h3>Restaurantes Populares</h3>
-        <div class="restaurant-card">
-            <img src="https://via.placeholder.com/80" alt="Pizzería">
-            <div>
-                <h4>Pizzería Bella Napoli</h4>
-                <p>Italiana • 25-35 min • 4.8 ★</p>
-            </div>
-        </div>
-        <div class="restaurant-card">
-            <img src="https://via.placeholder.com/80" alt="Sushi">
-            <div>
-                <h4>Sushi Express</h4>
-                <p>Japonesa • 30-40 min • 4.5 ★</p>
-            </div>
-        </div>
-    </div>
+  <!-- HISTORIAL -->
+  <section id="history-section" class="section hidden">
+    <h2>Historial</h2>
+    <p>No tienes historial aún.</p>
+  </section>
 
-    <div class="footer-nav">
-        <a href="#" class="active">Inicio</a>
-        <a href="#">Historial</a>
-        <!-- podemos ver por donde va el pedido, si ya salio, etc, etc -->
-        <a href="#">Pedidos</a>
-        <a href="#">Cuenta</a>
-    </div>
+  <!-- PEDIDOS -->
+  <section id="orders-section" class="section hidden">
+    <h2>Pedidos</h2>
+    <ul>
+      <li>Pedido #123 - Pizza Express - Entregado</li>
+      <li>Pedido #124 - Sushi World - En camino</li>
+    </ul>
+  </section>
 
-    <script src="./Home.js"></script>
+  <!-- CUENTA -->
+  <section id="account-section" class="section hidden">
+    <h2>Cuenta</h2>
+    <p>Nombre: Juan Pérez</p>
+    <p>Email: juanperez@example.com</p>
+    <button>Cerrar sesión</button>
+  </section>
+
+  <!-- NAVEGACIÓN -->
+  <footer class="bottom-nav">
+    <a href="#" class="nav-link active" data-section="home-section"><i class="fas fa-home"></i> Inicio</a>
+    <a href="#" class="nav-link" data-section="history-section"><i class="fas fa-history"></i> Historial</a>
+    <a href="#" class="nav-link" data-section="orders-section"><i class="fas fa-box"></i> Pedidos</a>
+    <a href="#" class="nav-link" data-section="account-section"><i class="fas fa-user"></i> Cuenta</a>
+  </footer>
+
+  <script src="./Home.js"></script>
 </body>
 </html>

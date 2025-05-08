@@ -88,5 +88,11 @@ namespace UberEats.Core.Application.Services
             var result = await _userRepository.GetByEmailAsync(email);
             return result;
         }
+
+        public async Task<IEnumerable<User>> GetAllUsersAsync()
+        {
+            var result = await _userRepository.GetAllUserAsync();
+            return result;
+        }
     }
 }

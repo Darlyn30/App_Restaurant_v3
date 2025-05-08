@@ -7,6 +7,7 @@ namespace UberEats.Core.Application.Interfaces.Services
 {
     public interface IUserService
     {
+        Task<IEnumerable<User>> GetAllUsersAsync();
         Task<User> GetUserByIdAsync(int userId);
         Task<User> GetUserByEmailAsync(string email);
         Task<bool> CreateUserAsync(SaveUserViewModel model);

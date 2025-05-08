@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Mi Carrito</title>
+    <link rel="stylesheet" href="./Carrito.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito - App de Comida</title>
-    <link rel="stylesheet" href="../css/Carrito.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="header">
-        <a href="../home/Home.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
-        <h2>Tu Carrito</h2>
-    </div>
+    <div class="container">
+        <h1>Mi Carrito</h1>
 
-    <div class="cart-items">
-        <div class="item">
-            <img src="https://via.placeholder.com/80" alt="Pizza">
-            <div class="info">
-                <h4>Pizza Margarita</h4>
-                <p>$10.00</p>
-                <span>Cantidad: 1</span>
-            </div>
+        <!-- Carrito vacío -->
+        <div id="empty-cart" class="empty-cart" style="display: none;">
+            <img src="https://cdn-icons-png.flaticon.com/512/513/513898.png" alt="Carrito vacío">
+            <h2>Your cart is empty</h2>
+            <p>Looks like you have not added anything to your cart. Go ahead & explore top categories.</p>
         </div>
-        <div class="item">
-            <img src="https://via.placeholder.com/80" alt="Sushi">
-            <div class="info">
-                <h4>Combo Sushi</h4>
-                <p>$15.00</p>
-                <span>Cantidad: 2</span>
-            </div>
+
+        <!-- Lista de productos -->
+        <div id="cart-items" class="cart-items"></div>
+
+        <!-- Acciones del carrito -->
+        <div class="cart-actions">
+            <button id="continue-btn">Seguir comprando</button>
+            <button id="checkout-btn">Pagar ahora</button>
         </div>
     </div>
 
-    <div class="summary">
-        <p>Total: <strong>$40.00</strong></p>
-        <button class="checkout-btn">Proceder al Pago</button>
+    <!-- Modal para efectuar pago -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2>Resumen del Pago</h2>
+            <p>Gracias por tu compra. Tu pedido será procesado.</p>
+            <button onclick="alert('Pago procesado correctamente')">Confirmar pago</button>
+        </div>
     </div>
 
-    <script src="../js/main.js"></script>
+    <script src="./Carrito.js"></script>
 </body>
 </html>

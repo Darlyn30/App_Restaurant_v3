@@ -85,13 +85,14 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
   if (!email.endsWith('@gmail.com')) {
       return; // Si el correo no es válido, el listener anterior ya manejó el error
   }
+  //#region gmailService
 
   event.preventDefault(); // Evita el envío del formulario por defecto
 
   // Obtener los valores del formulario
   const emailValue = document.getElementById('email').value;
   const passwordValue = document.getElementById('password').value;
-
+  //#region login
   if (isLogin) {
       // Modo: Iniciar Sesión
       console.log('Datos de inicio de sesión:', emailValue, passwordValue);
@@ -110,14 +111,21 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
       })
       .then(async response => {
         const data = await response.json();
-        if (!response.ok) {
-          console.error("Error:", data);
-          return;
+        if(response.status === 401){
+          const message = data.message || "No autorizado";
+          swal({
+            title: "Ha ocurrido un error",
+            text: message,
+            icon: "warning",
+          })
+          .then(res => {
+            return;
+          })
         }
         console.log("Token:", data.token);
         console.log("perfil: ", data.userVm);
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("account", data.userVm);
+        localStorage.setItem("token", JSON.stringify(data.token));
+        localStorage.setItem("account", JSON.stringify(data.userVm));
 
         swal({
           title: "Inicio de sesion exitoso!",
@@ -130,11 +138,17 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
           if(!data.userVm.isActive == true){
             window.location = "../subpages/Verification.html";
           }
-          window.location = "../subpages/home/Home.html";
+
+          if(!data.userVm.role === "Admin"){
+
+            window.location = "../subpages/home/Home.html";
+          }
+
+          window.location = "../subpages/Admin/Index.html";
         });
       })
       .catch(error => console.error("Catch error:", error));
-
+      //#region signup
   } else {
       // Modo: Registro
       const nameValue = document.getElementById('name').value;

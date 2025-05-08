@@ -14,11 +14,9 @@ namespace UberEats.Infrastructure.Persistence.Contexts
         public DbSet<UnverifiedAccount> UnverifiedAccounts { get; set; }
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Food> Foods { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderDetail> OrderDetails { get; set; }
-        public DbSet<ShoppingCar> ShoppingCars { get; set; }
-        public DbSet<ShoppingCarItem> ShoppingCarItems { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

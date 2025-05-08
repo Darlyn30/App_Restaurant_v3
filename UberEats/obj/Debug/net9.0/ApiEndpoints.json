@@ -16,6 +16,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApi.UberEats.Controllers.CartController",
+    "Method": "GetCartByUser",
+    "RelativePath": "api/Cart/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.UberEats.Controllers.CartController",
+    "Method": "AddToCart",
+    "RelativePath": "api/Cart/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userEmail",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "foodId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "quantity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApi.UberEats.Controllers.CategoryController",
     "Method": "GetAllCategories",
     "RelativePath": "api/Category",
@@ -207,6 +249,16 @@
   },
   {
     "ContainingType": "WebApi.UberEats.Controllers.UserController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.UberEats.Controllers.UserController",
     "Method": "CreateUser",
     "RelativePath": "api/User",
     "HttpMethod": "POST",
@@ -264,6 +316,48 @@
       {
         "Name": "email",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.UberEats.Controllers.VerifiyAccountController",
+    "Method": "GetAllUnverifiedAccounts",
+    "RelativePath": "api/VerifiyAccount",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.UberEats.Controllers.VerifiyAccountController",
+    "Method": "verifyAccount",
+    "RelativePath": "api/VerifiyAccount/verify",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.UberEats.Controllers.CartController",
+    "Method": "RemoveFromCart",
+    "RelativePath": "item/{itemId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "itemId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

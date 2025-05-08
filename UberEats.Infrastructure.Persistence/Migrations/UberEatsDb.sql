@@ -16,6 +16,9 @@ CREATE TABLE Users
 
 SELECT * FROM Users
 
+
+
+
 CREATE TABLE UnverifiedAccounts
 (
 	Id INT IDENTITY(1,1) PRIMARY KEY,
@@ -86,44 +89,26 @@ VALUES
 
 
 
-CREATE TABLE ShoppingCar
+CREATE TABLE Carts
 (
 	Id INT IDENTITY(1,1) PRIMARY KEY,
-	UserId  UNIQUEIDENTIFIER,
-	CreationDate DATETIME
+	UserEmail  VARCHAR(100) NOT NULL,
+	CreationAt DATETIME DEFAULT GETDATE(),
+	FOREIGN KEY (UserEmail) REFERENCES Users(Email)
 )
 
-CREATE TABLE ShoppingCarItems
+CREATE TABLE CartItems
 (
 	Id INT IDENTITY(1,1) PRIMARY KEY,
-	ShoppingCarId INT,
-	FoodId INT,
-	Quantity INT,
-	FOREIGN KEY(ShoppingCarId) REFERENCES ShoppingCar(Id),
-	FOREIGN KEY(FoodId) REFERENCES Foods(Id)
-)
-
-CREATE TABLE Orders
-(
-	Id INT IDENTITY(1,1) PRIMARY KEY,
-	UserId UNIQUEIDENTIFIER,
-	RestaurantId INT,
-	Total DECIMAL(10,2),
-	Status VARCHAR(50),
-	OrderDate DATETIME,
-	FOREIGN KEY(RestaurantId) REFERENCES Restaurants(Id)
-)
-
-CREATE TABLE OrderDetails
-(
-	Id INT IDENTITY(1,1) PRIMARY KEY,
-	OrderId INT NOT NULL,
+	CartId INT NOT NULL,
 	FoodId INT NOT NULL,
 	Quantity INT NOT NULL,
-	UnitPrice DECIMAL(10,2) NOT NULL,
-	FOREIGN KEY(OrderId) REFERENCES Orders(Id),
+	Price DECIMAL(10,2) NOT NULL
+	FOREIGN KEY(CartId) REFERENCES Carts(Id),
 	FOREIGN KEY(FoodId) REFERENCES Foods(Id)
 )
+
+
 
 --para el usuario, uno obtiene el pin, y lo mete en la tabla de cuentas no verificadas
 CREATE TRIGGER GetPIN
@@ -168,4 +153,3 @@ BEGIN
 		ELSE 0
 	END
 END
-

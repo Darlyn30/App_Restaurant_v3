@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administración - UberEats</title>
+  <link rel="stylesheet" href="./Styles.css" />
+</head>
+<body>
+  <header>
+    <h1>UberEats Admin</h1>
+    <nav>
+      <ul>
+        <li><a href="#" class="nav-link active" data-section="dashboard">Dashboard</a></li>
+        <li><a href="#" class="nav-link" data-section="restaurants">Restaurantes</a></li>
+        <li><a href="#" class="nav-link" data-section="categories">Categorías</a></li>
+        <!-- <li><a href="#" class="nav-link" data-section="orders">Órdenes</a></li> -->
+        <li><a href="#" class="logout-btn" >Cerrar sesion</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="dashboard" class="section">Bienvenido al panel de administración.</section>
+    <section id="restaurants" class="section hidden">Gestión de Restaurantes</section>
+    <section id="categories" class="section hidden">Gestión de Categorías</section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 UberEats Admin Panel</p>
+  </footer>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="./Main.js"></script>
+</body>
+</html>

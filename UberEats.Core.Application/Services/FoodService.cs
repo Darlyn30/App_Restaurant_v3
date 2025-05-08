@@ -13,6 +13,11 @@ namespace UberEats.Core.Application.Services
             _foodRepository = foodRepository;
         }
 
+        public async Task AddCart(Cart cart)
+        {
+            await _foodRepository.AddCart(cart);
+        }
+
         public async Task<IEnumerable<Food>> GetByRestaurant(int restaurantId)
         {
             var result = await _foodRepository.GetByRestaurant(restaurantId);

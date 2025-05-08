@@ -1,3 +1,8 @@
+// conexion a la API
+
+const URL = "https://localhost:7075/api/VerifiyAccount"; // debe borrar desde aqui luego de verificar
+
+
 const button = document.querySelector(".verify-button");
 function moveToNext(current, nextFieldID) {
     if (current.value.length === 1) {
@@ -24,23 +29,30 @@ function verificarCodigo() {
     })
 }
 
-function maskEmail(email) {
-    // Separar el correo en la parte del usuario y el dominio usando el "@"
-    const [username, domain] = email.split('@');
+
+function deleteD(email){
+    const urlD = `https://localhost:7225/api/VerifiyAccount/verify?email=${encodeURIComponent(email)}`;//para eliminar desde aqui despues de verificar
     
-    // Tomar solo la primera letra del nombre de usuario
-    const firstLetter = username.charAt(0);
-    
-    // Crear una cadena de asteriscos para ocultar el resto del nombre de usuario
-    const maskedUsername = firstLetter + '*'.repeat(username.length - 1);
-    
-    // Combinar la parte enmascarada con el dominio
-    return `${maskedUsername}@${domain}`;
+    fetch(urlD, {
+        method: "DELETE",
+        headers : {
+          'Content-Type' : 'application/json'
+        },
+    })
+    .then(res => {
+        console.log("success", res);
+
+        swal({
+            title: "Cuenta verificada exitosamente!",
+            text: `Puedes iniciar sesion`,
+            icon: "success",
+        })
+        .then(res => {
+            window.location = "../index.html";
+        })
+    })
 }
 
-// Ejemplo de uso
-const email = "juanperez@gmail.com"; //TODO cambiar esto, que es de ejemplo por un correo real
-const maskedEmail = maskEmail(email); // Esto devolverá "j*******@gmail.com"
-
-// Insertar el correo enmascarado en el HTML
-document.getElementById('email-display').textContent = maskedEmail;
+button.addEventListener("click", () => {
+    verificarCodigo();
+})

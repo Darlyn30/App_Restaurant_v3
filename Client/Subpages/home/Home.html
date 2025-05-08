@@ -44,10 +44,21 @@
 
   <!-- CUENTA -->
   <section id="account-section" class="section hidden">
-    <h2>Cuenta</h2>
-    <p>Nombre: Juan Pérez</p>
-    <p>Email: juanperez@example.com</p>
-    <button>Cerrar sesión</button>
+    <div class="account-card">
+      <h2>👤 Cuenta del Usuario</h2>
+      <div class="account-info">
+        <p><strong>Nombre:</strong> <span id="user-name"></span></p>
+        <p><strong>Email:</strong> <span id="user-email"></span></p>
+      </div>
+      <button class="logout-btn">Cerrar sesión</button>
+    </div>
+  </section>
+
+  <section id="cart-section" class="section hidden">
+    <h2>Mi carrito</h2>
+    <div id="cart-items"></div>
+    <p id="cart-total">Total: $0.00</p>
+    <button id="checkout-btn">Finalizar compra</button>
   </section>
 
   <!-- NAVEGACIÓN -->
@@ -58,6 +69,7 @@
     <a href="#" class="nav-link" data-section="account-section"><i class="fas fa-user"></i> Cuenta</a>
   </footer>
 
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="./Home.js"></script>
 </body>
 </html>

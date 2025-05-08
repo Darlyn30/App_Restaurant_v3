@@ -15,6 +15,13 @@ namespace UberEats.Infrastructure.Persistence.Repositories
             _context = context;
         }
 
+        public async Task AddCart(Cart cart)
+        {
+            cart.CreationAt = DateTime.UtcNow;
+            _context.Carts.Add(cart);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<Food>> GetByRestaurant(int restaurantId)
         {
             var foods = await _context.Foods

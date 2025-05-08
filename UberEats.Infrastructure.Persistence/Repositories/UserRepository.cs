@@ -60,5 +60,11 @@ namespace UberEats.Infrastructure.Persistence.Repositories
             await _context.SaveChangesAsync();
             return user;
         }
+
+        public async Task<IEnumerable<User>> GetAllUserAsync()
+        {
+            var result = await _context.Users.ToListAsync();
+            return result;
+        }
     }
 }

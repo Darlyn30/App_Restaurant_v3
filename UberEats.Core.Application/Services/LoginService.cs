@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿ using Microsoft.Extensions.Configuration;
 using UberEats.Core.Application.DTO.Account;
 using UberEats.Core.Application.Helpers;
 using UberEats.Core.Application.Interfaces.Repositories;
@@ -29,10 +29,10 @@ namespace UberEats.Core.Application.Services
                 return new LoginResult { IsSuccess = false, Message = "Usuario no encontrado" };
 
             if (!_passwordHasher.VerifyHashedPassword(model.Password, user.PasswordHash))
-                return new LoginResult { IsSuccess = false, Message = "Contraseña incorrecta" };
+                return new LoginResult { IsSuccess = false, Message = "Correo o contraseña incorrecta" };
 
             if (!user.IsActive)
-                return new LoginResult { IsSuccess = false, Message = "Usuario no verificado" };
+                return new LoginResult { IsSuccess = false, Message = "Usuario no verificado, por favor revise su correo" };
 
             // solo si el usuario esta verificado
             // Generar JWT

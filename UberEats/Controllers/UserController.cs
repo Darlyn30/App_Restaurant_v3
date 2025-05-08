@@ -19,6 +19,14 @@ namespace WebApi.UberEats.Controllers
             _userService = userService;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            //esto solo es para tener las cuentas de una forma rapida
+            var users = await _userService.GetAllUsersAsync();
+            return Ok(users);
+        }
+
         [HttpGet("{id}")]
 
         public async Task<IActionResult> GetUserById(int id)
@@ -53,7 +61,7 @@ namespace WebApi.UberEats.Controllers
             return Ok("Usuario creado exitosamente.");
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {

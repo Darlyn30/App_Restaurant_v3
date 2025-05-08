@@ -11,5 +11,6 @@ namespace UberEats.Core.Application.Interfaces.Repositories
         Task<User> AddAsync(User user);
         Task<User> UpdateAsync(User user);
         Task<bool> DeleteAsync(int userId);
+        Task<IEnumerable<User>> GetAllUserAsync();
     }
 }

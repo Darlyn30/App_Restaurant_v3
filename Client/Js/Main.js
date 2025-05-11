@@ -126,6 +126,8 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
         console.log("perfil: ", data.userVm);
         localStorage.setItem("token", JSON.stringify(data.token));
         localStorage.setItem("account", JSON.stringify(data.userVm));
+        let user = JSON.parse(localStorage.getItem("account"));
+        
 
         swal({
           title: "Inicio de sesion exitoso!",
@@ -135,16 +137,16 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
         .then(res => {
 
           
-          if(!data.userVm.isActive == true){
+          if(!user.isActive == true){
             window.location = "../subpages/Verification.html";
           }
 
-          if(!data.userVm.role === "Admin"){
-
+          if(user.role === "Client"){
             window.location = "../subpages/home/Home.html";
+          } else {
+            window.location = "../subpages/Admin/Index.html";
           }
 
-          window.location = "../subpages/Admin/Index.html";
         });
       })
       .catch(error => console.error("Catch error:", error));

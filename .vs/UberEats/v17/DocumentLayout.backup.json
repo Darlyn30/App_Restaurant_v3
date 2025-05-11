@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\programacion\\C#\\UberEatsApp\\App_Restaurant_v3\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|d:\\programacion\\c#\\ubereatsapp\\app_restaurant_v3\\ubereats\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|solutionrelative:ubereats\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|d:\\programacion\\c#\\ubereatsapp\\app_restaurant_v3\\ubereats\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|solutionrelative:ubereats\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|d:\\programacion\\c#\\ubereatsapp\\app_restaurant_v3\\ubereats\\controllers\\restaurantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|solutionrelative:ubereats\\controllers\\restaurantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darly\\AppData\\Roaming\\Microsoft\\UserSecrets\\a9235ff6-11f2-41a6-8328-a15aa8ed682e\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -22,10 +34,49 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FoodController.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEatsApp\\App_Restaurant_v3\\UberEats\\Controllers\\FoodController.cs",
+              "RelativeDocumentMoniker": "UberEats\\Controllers\\FoodController.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEatsApp\\App_Restaurant_v3\\UberEats\\Controllers\\FoodController.cs",
+              "RelativeToolTip": "UberEats\\Controllers\\FoodController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T05:53:24.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEatsApp\\App_Restaurant_v3\\UberEats\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "UberEats\\Controllers\\CategoryController.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEatsApp\\App_Restaurant_v3\\UberEats\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "UberEats\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T05:53:19.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RestaurantController.cs",
+              "DocumentMoniker": "D:\\programacion\\C#\\UberEatsApp\\App_Restaurant_v3\\UberEats\\Controllers\\RestaurantController.cs",
+              "RelativeDocumentMoniker": "UberEats\\Controllers\\RestaurantController.cs",
+              "ToolTip": "D:\\programacion\\C#\\UberEatsApp\\App_Restaurant_v3\\UberEats\\Controllers\\RestaurantController.cs",
+              "RelativeToolTip": "UberEats\\Controllers\\RestaurantController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T05:53:03.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\darly\\AppData\\Roaming\\Microsoft\\UserSecrets\\a9235ff6-11f2-41a6-8328-a15aa8ed682e\\secrets.json",
               "ToolTip": "C:\\Users\\darly\\AppData\\Roaming\\Microsoft\\UserSecrets\\a9235ff6-11f2-41a6-8328-a15aa8ed682e\\secrets.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-05-07T04:04:18.402Z",
               "EditorCaption": ""

@@ -8,9 +8,8 @@ let allRestaurants = [];
 let selectedRestaurantId = null;
 let selectedRestaurantName = "";
 
-
-
-
+                //   localStorage.removeItem("token");
+                //   localStorage.removeItem("account");
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -18,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.getElementById("search-input");
 
 
+  
   //cuando se le haga click en cerrar sesion
   document.querySelector('.logout-btn').addEventListener("click", () => {
 
@@ -54,20 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       renderRestaurants(filtered);
   });
-
-    if(!localStorage.getItem("token") === undefined){
-        const token = JSON.parse(localStorage.getItem("token"));
-        const user = JSON.parse(localStorage.getItem("account"));
-
-        console.log(token);
-        console.log(user);
-    } else {
-        //SOLUCION TEMPORAL: ASI EVITAMOS QUE HAYA UN BUG 
-        localStorage.removeItem("token");
-        localStorage.removeItem("account");
-        window.location.href = "../../Index.html";
-    }
-
   // Cargar categorías
   fetch(URLS.URL_CATEGORY)
       .then(res => res.json())
@@ -127,15 +113,27 @@ document.addEventListener("DOMContentLoaded", function () {
           });
 
           list.appendChild(card);
-      });
+    });
   }
 
   function cargarComidasPorRestaurante(id, name) {
       fetch(`${URLS.URL_FOOD_BY_RESTAURANT}${id}`)
-          .then(res => res.json())
-          .then(data => {
-              renderFoods(data, name);
-          });
+          .then(async res => {
+            const data = await res.json();
+            if(res.status === 404){
+                const message = data.message || "Not Found";
+                swal({
+                    title: "Ha ocurrido un error",
+                    text: message,
+                    icon: "warning",
+                })
+                .then(res => {
+                    window.location.href = "";
+                })
+            }
+
+            renderFoods(data, name);
+        })
   }
 
   function renderFoods(foods, restaurantName) {
@@ -164,14 +162,36 @@ document.addEventListener("DOMContentLoaded", function () {
           card.className = "food-card";
           card.innerHTML = `
               <img src="${food.imgUrl || 'https://via.placeholder.com/150'}" alt="${food.name}">
-              <div class="info">
-                  <h4>${food.name}</h4>
-                  <p>${food.description}</p>
-                  <p class="price" style="color: green;">$${food.price.toFixed(2)}</p>
-              </div>
+            <div class="info">
+                <h4>${food.name}</h4>
+                <p>${food.description}</p>
+                <p class="price" style="color: green;">$${food.price.toFixed(2)}</p>
+                <button class="add-to-cart-btn" data-id="${food.id}">Agregar al carrito</button>
+            </div>
           `;
           grid.appendChild(card);
       });
+
+      document.addEventListener("click", (e) => {
+        if(e.target && e.target.classList.contains("add-to-cart-btn")){
+            const foodId = e.target.getAttribute("data-id");
+            const selectedFood = foods.find(f => f.id == foodId);
+            addToCart(selectedFood);
+        }
+      })
+
+      function addToCart(food){
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        carrito.push(food);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        swal({
+            title: "Producto agregado",
+            text: `${food.name} ha sido agregado al carrito.`,
+            icon: "success",
+            timer: 1500,
+            buttons: false
+        });
+      }
 
       list.appendChild(grid);
 
@@ -179,6 +199,8 @@ document.addEventListener("DOMContentLoaded", function () {
           renderRestaurants(allRestaurants);
       });
   }
+
+  const user = JSON.parse(localStorage.getItem("account"));
 
   // Navegación entre secciones simuladas
   document.querySelectorAll(".nav-link").forEach(link => {

@@ -7,26 +7,24 @@ namespace UberEats.Infrastructure.Persistence.Repositories
 {
     public class VerifyAccountRepository : IVerifyAccountRepository
     {
-        private readonly ApplicationContext _context;
-        public VerifyAccountRepository(ApplicationContext context)
+        private readonly VerifyContext _context;
+
+        public VerifyAccountRepository(VerifyContext context)
         {
             _context = context;
         }
 
         public List<UnverifiedAccount> GetUnverifiedAccounts()
         {
-            var result = _context.UnverifiedAccounts.ToList();
+            var result = _context.unverifiedAccounts.ToList();
             return result;
         }
 
         public void verifyAccount(string email)
         {
-            var account = _context.UnverifiedAccounts.FirstOrDefault(x => x.Email == email);
-            if (account != null)
-            {
-                _context.UnverifiedAccounts.Remove(account);
-                _context.SaveChanges();
-            }
+            var registro = _context.unverifiedAccounts.Where(user => user.Email == email).FirstOrDefault();
+            _context.unverifiedAccounts.Remove(registro);
+            _context.SaveChanges();
         }
     }
 }

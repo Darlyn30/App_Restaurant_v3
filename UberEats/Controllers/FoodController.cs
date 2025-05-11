@@ -20,7 +20,7 @@ namespace WebApi.UberEats.Controllers
         {
             var result = await _foodService.GetByRestaurant(restaurantId);
             if (result == null || !result.Any())
-                return NotFound("No foods found for this restaurant.");
+                return NotFound(new { Message = "No foods found for this restaurant." });
 
             return Ok(result);
         }

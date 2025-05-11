@@ -305,5 +305,20 @@ body {
 .logout-btn:hover {
     background-color: #c0392b;
 }
+
+.add-to-cart-btn{
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover{
+    background-color: #218838;
+}
   
   

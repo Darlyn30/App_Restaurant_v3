@@ -17,10 +17,9 @@ namespace WebApi.UberEats.Controllers
 
         [HttpDelete("verify")]
 
-        public IActionResult verifyAccount(string email)
+        public void verifyAccount(string email)
         {
             _verifyAccountService.VerifyAccount(email);
-            return Ok();
         }
 
         [HttpGet]

@@ -1,7 +1,7 @@
 // conexion a la API
 
-const URL = "https://localhost:7075/api/VerifiyAccount"; // debe borrar desde aqui luego de verificar
-
+const URLs = "https://localhost:7075/api/VerifiyAccount"; // debe borrar desde aqui luego de verificar
+    const urlD = email => `https://localhost:7075/api/VerifiyAccount/verify?email=${encodeURIComponent(email)}`;//para eliminar desde aqui despues de verificar
 
 const button = document.querySelector(".verify-button");
 function moveToNext(current, nextFieldID) {
@@ -16,7 +16,7 @@ function moveToNext(current, nextFieldID) {
 function verificarCodigo() {
     const code = Array.from(document.querySelectorAll('.code-input')).map(input => input.value).join('');
     
-    fetch(URL)
+    fetch(URLs)
     .then(res => res.json())
     .then(data => {
         for(let i = 0; i < data.length; i++){
@@ -31,7 +31,6 @@ function verificarCodigo() {
 
 
 function deleteD(email){
-    const urlD = `https://localhost:7225/api/VerifiyAccount/verify?email=${encodeURIComponent(email)}`;//para eliminar desde aqui despues de verificar
     
     fetch(urlD, {
         method: "DELETE",
@@ -48,7 +47,7 @@ function deleteD(email){
             icon: "success",
         })
         .then(res => {
-            window.location = "../index.html";
+            window.location = "../../Index.html";
         })
     })
 }

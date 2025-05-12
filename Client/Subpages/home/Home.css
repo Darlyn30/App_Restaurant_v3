@@ -320,5 +320,40 @@ body {
 .add-to-cart-btn:hover{
     background-color: #218838;
 }
+
+#cart-icon {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background-color: #ff6347;
+  color: white;
+  border-radius: 50%;
+  padding: 12px;
+  z-index: 1000;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#cart-icon:hover {
+  background-color: #e5533d;
+}
+
+#cart-icon i {
+  font-size: 20px;
+}
+
+#cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: white;
+  color: #ff6347;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
   
   

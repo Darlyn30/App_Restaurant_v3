@@ -12,6 +12,7 @@ namespace UberEats.Infrastructure.Persistence.Repositories
         {
             _context = context;
         }
+
         public async Task<ICollection<Category>> GetAllCategoriesAsync()
         {
             return await _context.Categories.ToListAsync();

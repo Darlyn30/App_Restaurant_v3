@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchBtn = document.getElementById("search-btn");
   const searchInput = document.getElementById("search-input");
 
-
+    document.getElementById('cart-icon').addEventListener('click', () => {
+        window.location.href = "../carrito/Carrito.html";
+    });
   
   //cuando se le haga click en cerrar sesion
   document.querySelector('.logout-btn').addEventListener("click", () => {

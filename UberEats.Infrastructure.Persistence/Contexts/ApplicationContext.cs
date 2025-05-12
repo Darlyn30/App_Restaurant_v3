@@ -11,6 +11,7 @@ namespace UberEats.Infrastructure.Persistence.Contexts
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<UnverifiedAccount> unverifiedAccounts { get; set; }
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Food> Foods { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -21,6 +22,9 @@ namespace UberEats.Infrastructure.Persistence.Contexts
         {
             modelBuilder.Entity<User>()
                 .ToTable(tb => tb.HasTrigger("GetPIN"));
+
+            modelBuilder.Entity<UnverifiedAccount>()
+                .ToTable(tb => tb.HasTrigger("changeStatus"));
         }
     }
 }

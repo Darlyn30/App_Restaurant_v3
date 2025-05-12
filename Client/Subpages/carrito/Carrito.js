@@ -1,5 +1,4 @@
-const cart = JSON.parse(localStorage.getItem("carrito"));
-console.log(cart);
+const cart = [];
 
 window.onload = function () {
     const cartContainer = document.getElementById('cart-items');

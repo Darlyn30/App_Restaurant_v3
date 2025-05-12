@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApi.UberEats")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1725927829fef9f4f38b9882ce363684298779f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8700b7cc7cd7e7f2421e7ad3afaea207c77ec0a7")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApi.UberEats")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApi.UberEats")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

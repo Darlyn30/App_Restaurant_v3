@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using UberEats.Core.Application.Interfaces.Services;
 
 namespace WebApi.UberEats.Controllers
@@ -15,28 +16,20 @@ namespace WebApi.UberEats.Controllers
             _cartService = cartService;
         }
 
-        [HttpPost("add")]
+        [HttpGet]
 
-        public IActionResult AddToCart(string userEmail, int foodId, int quantity)
+        public async Task<IActionResult> GetCart()
         {
-            _cartService.AddToCart(userEmail, foodId, quantity);
-            return Ok("Item added to cart");
+            var userId = GetUserIdFromToken();
+
+            var cart = await _cartService.GetCarts(userId);
+
+            return Ok(cart);
         }
 
-        [HttpGet("{email}")]
-
-        public IActionResult GetCartByUser(string email)
+        private int GetUserIdFromToken()
         {
-            var result = _cartService.GetCartByUser(email);
-            return Ok(result);
-        }
-
-        [HttpDelete("/item/{itemId}")]
-
-        public IActionResult RemoveFromCart(int itemId)
-        {
-            _cartService.RemoveFromCart(itemId);
-            return Ok("Item removed from cart");
+            return int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
         }
     }
 }

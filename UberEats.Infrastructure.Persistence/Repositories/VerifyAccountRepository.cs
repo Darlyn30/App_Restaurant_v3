@@ -7,9 +7,9 @@ namespace UberEats.Infrastructure.Persistence.Repositories
 {
     public class VerifyAccountRepository : IVerifyAccountRepository
     {
-        private readonly VerifyContext _context;
+        private readonly ApplicationContext _context;
 
-        public VerifyAccountRepository(VerifyContext context)
+        public VerifyAccountRepository(ApplicationContext context)
         {
             _context = context;
         }

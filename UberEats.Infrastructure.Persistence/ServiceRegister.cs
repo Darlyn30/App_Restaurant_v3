@@ -17,10 +17,6 @@ namespace UberEats.Infrastructure.Persistence
             services.AddDbContext<ApplicationContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
             m => m.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
-
-            services.AddDbContext<VerifyContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-            m => m.MigrationsAssembly(typeof(VerifyContext).Assembly.FullName)));
             #endregion
 
             #region repositories

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eZLRicnG32Y=",
+  "dgSpecHash": "F0zl3K43y78=",
   "success": true,
-  "projectFilePath": "D:\\programacion\\C#\\UberEatsApp\\App_Restaurant_v3\\UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj",
+  "projectFilePath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\darly\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\darly\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

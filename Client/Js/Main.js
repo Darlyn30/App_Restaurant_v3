@@ -9,9 +9,20 @@ const submitBtn = document.getElementById('submitBtn');
 let isLogin = true;
 
 let id = 0;
-const URL_LOGIN = "https://localhost:7075/api/Account/login"; //POST
-const URL_SIGN_UP = "https://localhost:7075/api/User/register"; //POST
-const URL_GET_ID = `https://localhost:7075/api/User/${id}`; //GET
+
+
+let token = localStorage.getItem("token");
+console.log(token);
+if(token){
+  window.location = "../subpages/home/Home.html";
+}
+
+const URLS = {
+  URL_LOGIN : "https://localhost:7075/api/Account/login", //POST
+  URL_SIGN_UP : "https://localhost:7075/api/User", //POST
+  URL_GET_ID : `https://localhost:7075/api/User/${id}` //GET
+}
+
 
 // Tema claro/oscuro
 themeBtn.addEventListener('click', () => {
@@ -50,9 +61,9 @@ document.querySelectorAll('.toggle-password').forEach(icon => {
     });
 });
 
-
 //se asegura que el correo sea de google
 document.getElementById('authForm').addEventListener('submit', function(event) {
+
   const email = document.getElementById('email').value;
   const warningMessage = document.getElementById('warningMessage');
   
@@ -68,69 +79,54 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
 //logica de la web app
 
 // Nuevo eventListener para manejar el inicio de sesión y el registro
-document.getElementById('authForm').addEventListener('submit', function(event) {
+document.getElementById('authForm').addEventListener('submit', async function(event) {
   // Solo proceder si el correo es válido (ya lo verificaste en el listener anterior)
   const email = document.getElementById('email').value;
   if (!email.endsWith('@gmail.com')) {
       return; // Si el correo no es válido, el listener anterior ya manejó el error
   }
+  //#region gmailService
 
   event.preventDefault(); // Evita el envío del formulario por defecto
 
   // Obtener los valores del formulario
   const emailValue = document.getElementById('email').value;
   const passwordValue = document.getElementById('password').value;
-
+  //#region login
   if (isLogin) {
       // Modo: Iniciar Sesión
       console.log('Datos de inicio de sesión:', emailValue, passwordValue);
-      // Aquí puedes agregar tu lógica para el inicio de sesión
-
-      // fetch(URL_LOGIN, {
-      //   method: 'POST',
-      //   headers : {
-      //     'Content-Type' : 'application/json'
-      //   },
-      //   body: JSON.stringify(emailValue, passwordValue)
-      // })
-      // .then(res => {
-      //   console.log("success", res);
-      // })
 
       const dataLogin = {
         Email: emailValue,
         Password: passwordValue
       }
+      try {
+          const data = await apiCall(URLS.URL_LOGIN, "POST", dataLogin); // auth = false
 
-      fetch("https://localhost:7075/api/Account/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(dataLogin)
-      })
-      .then(async response => {
-        const data = await response.json();
-        if (!response.ok) {
-          console.error("Error:", data);
-          return;
-        }
-        console.log("Token:", data.token);
-        console.log("perfil: ", data.userVm);
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("account", data.userVm);
+          console.log("Token:", data.token);
+          console.log("perfil: ", data.userVm);
+          localStorage.setItem("token", JSON.stringify(data.token));
+          localStorage.setItem("account", JSON.stringify(data.userVm));
+          const user = data.userVm;
 
-        swal({
-          title: "Inicio de sesion exitoso!",
-          text: "Bienvenido " +data.userVm.name + "!",
-          icon: "success",
-        })
-        .then(res => {
-          window.location = "../subpages/home.html";
-        });
-      })
-      .catch(error => console.error("Catch error:", error));
-
+          swal({
+              title: "Inicio de sesión exitoso!",
+              text: `Bienvenido ${user.name}!`,
+              icon: "success"
+          }).then(() => {
+              if (!user.isActive) {
+                  window.location = "../subpages/Verification.html";
+              } else if (user.role === "Client") {
+                  window.location = "../subpages/home/Home.html";
+              } else {
+                  window.location = "../subpages/Admin/Index.html";
+              }
+          });
+      } catch (error) {
+          swal("Ha ocurrido un error", error.message, "warning");
+      }
+      //#region signup
   } else {
       // Modo: Registro
       const nameValue = document.getElementById('name').value;
@@ -139,43 +135,50 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
       const registerData = {
           name: nameValue,
           email: emailValue,
-          password: passwordValue,
-          Role : 'Client' // cuando se registre desde aqui, 
+          password: passwordValue, 
       };
       console.log('Datos de registro:', registerData);
 
-      fetch(URL_SIGN_UP, {
-        method: 'POST',
+    if (!nameValue || !emailValue || !passwordValue || !confirmPasswordValue) {
+        return swal("ERROR!", "No puede haber campos vacíos", "warning");
+    }
+
+    if (passwordValue !== confirmPasswordValue) {
+        return swal("ERROR!", "Las contraseñas no coinciden", "warning");
+    }
+
+    try {
+        const data = await apiCall(URLS.URL_SIGN_UP, "POST", registerData, false); // auth = false
+
+        swal("Cuenta creada con éxito", "Redirigiendo a verificación...", "success")
+            .then(() => {
+                window.location = "../subpages/verification/Verification.html";
+            });
+    } catch (error) {
+        swal("Error al registrar", error.message, "error");
+    }
+      }
+    });
+
+async function apiCall(url, method, body = null) {
+    const options = {
+        method,
         headers : {
-          'Content-Type' : 'application/json'
-        },
-        body: JSON.stringify(registerData)
-      })
-      .then(res => {
-        if(registerData.name == "" || registerData.email == "" || registerData.password == "" || confirmPasswordValue == ""){
-          swal({
-            title: "ERROR!",
-            text: "no puede haber campos vacíos \n O no podemos encontrar su cuenta \n O crea una",
-            icon: "warning",
-          });
-        } else if(registerData.password != confirmPasswordValue){
-          swal({
-            title: "ERROR!",
-            text: "Las contraseñas no coinciden",
-            icon: "warning",
-          });
-        } else {
-          console.log("success", res);
-        
-          swal({
-              title: "Cuenta creada con exito!",
-              text: "Su cuenta ha sido creada exitosamente!",
-              icon: "success",
-          })
-          .then(res => {
-              window.location = "../verification/verification.html";
-          });
+            "Content-Type" : "application/json"
         }
-      })
-  }
-});
+    }
+
+    if(body) options.body = JSON.stringify(body);
+
+    try {
+        const res = await fetch(url, options);
+
+        const data = res.json();
+        if(!res.ok) throw new Error(data.message || "");
+
+        return data;
+    } catch(err){
+        console.error("Error en la peticion: ", err.message);
+        throw err;
+    }
+}

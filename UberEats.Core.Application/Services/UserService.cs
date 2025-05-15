@@ -1,62 +1,94 @@
 ﻿
+using System.Net.NetworkInformation;
+using Microsoft.Extensions.Configuration;
 using UberEats.Core.Application.Helpers;
 using UberEats.Core.Application.Interfaces.Repositories;
 using UberEats.Core.Application.Interfaces.Services;
 using UberEats.Core.Application.ViewModels.User;
 using UberEats.Core.Domain.Entities;
+using UberEats.Core.Domain.Settings;
+using UberEats.Infrastructure.Shared.Services;
 
 namespace UberEats.Core.Application.Services
 {
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-        private readonly IPasswordHasher _passwordHasher;
 
-        public UserService(IUserRepository userRepository, IPasswordHasher passwordHasher)
+        public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
-            _passwordHasher = passwordHasher;
         }
 
-        public async Task<bool> CreateUserAsync(SaveUserViewModel model)
+        public async Task<SaveUserViewModel> Add(SaveUserViewModel vm)
         {
-            var existingUser = await _userRepository.GetByEmailAsync(model.Email);
-            if (existingUser != null)
-            {
-                return false; // User already exists
-            }
-
-            var user = new User
-            {
-                Name = model.Name,
-                PasswordHash = _passwordHasher.HashPassword(model.Password),
-                Email = model.Email,
-                Role = model.Role
-            };
+            User user = new();
+            user.IsActive = false;
+            user.Name = vm.Name;
+            user.Email = vm.Email;
+            user.Role = vm.Role;
+            user.PasswordHash = PasswordEncryptation.ComputeSha256Hash(vm.Password);
 
             await _userRepository.AddAsync(user);
-            return true;
+
+            SaveUserViewModel userVm = new();
+
+            userVm.Id = user.Id;
+            userVm.Password = user.PasswordHash;
+            userVm.Email = user.Email;
+            userVm.Role = user.Role;
+            userVm.isActive = user.IsActive;
+            return userVm;
         }
 
-        public async Task<bool> DeleteUserAsync(int userId)
+        public async Task delete(int id)
         {
-
+            var entity = await _userRepository.GetByIdAsync(id);
             
-            await _userRepository.DeleteAsync(userId);
-
-            return true;
+            await _userRepository.DeleteAsync(entity);
         }
 
-        public async Task<User> GetUserByIdAsync(int userId)
+        public Task<IEnumerable<SaveUserViewModel>> GetAllViewModel()
         {
-            var result = await _userRepository.GetByIdAsync(userId);
-            return result;
+            throw new NotImplementedException();
         }
 
-        public async Task<User> GetUserByEmailAsync(string email)
+        public Task<SaveUserViewModel> GetByIdSaveViewModel(int id)
         {
-            var result = await _userRepository.GetByEmailAsync(email);
-            return result;
+            throw new NotImplementedException();
+        }
+
+        public Task<List<UserViewModel>> GetByName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<UserViewModel> Login(LoginViewModel loginVm)
+        {
+            UserViewModel userVm = new();
+            User user = await _userRepository.LoginAsync(loginVm);
+
+            if (user == null)
+                return null;
+
+            userVm.Id = user.Id;
+            userVm.Email = user.Email;
+            userVm.Name = user.Name;
+            userVm.Role = user.Role;
+
+            return userVm;
+        }
+
+        public async Task Update(SaveUserViewModel vm)
+        {
+            User user = await _userRepository.GetByIdAsync(vm.Id);
+            user.Id = vm.Id;
+            user.Name = vm.Name;
+            user.Email = vm.Email;
+            user.PasswordHash = PasswordEncryptation.ComputeSha256Hash(vm.Password);
+            user.Role = vm.Role;
+
+            await _userRepository.UpdateAsync(user);
         }
     }
 }

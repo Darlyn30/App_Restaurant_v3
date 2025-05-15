@@ -1,6 +1,13 @@
 using UberEats.Core.Application;
 using UberEats.Infrastructure.Shared;
 using UberEats.Infrastructure.Persistence;
+using UberEats.Core.Application.Interfaces.Services;
+using UberEats.Core.Application.Services;
+using Microsoft.AspNetCore.Mvc;
+using WebApi.UberEats.Middlewares;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +25,32 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationLayer();
 builder.Services.AddSharedInfrastructure();
 builder.Services.AddPersistenceInfrastructure(builder.Configuration);
+//middlewares
+builder.Services.AddTransient<IAuthService, AuthService>();
+
+builder.Services.Configure<JsonOptions>(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new TimeOnlyJsonConverter());
+});
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+        };
+    });
 
 var app = builder.Build();
 
@@ -35,9 +68,9 @@ app.UseAuthorization();
 
 app.UseCors(policy =>
 {
-    policy.AllowAnyOrigin()
-          .AllowAnyMethod()
-          .AllowAnyHeader();
+    policy.AllowAnyOrigin();
+    policy.AllowAnyMethod();
+    policy.AllowAnyHeader();
 });
 app.MapControllers();
 

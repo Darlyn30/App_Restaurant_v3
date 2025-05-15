@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administración - UberEats</title>
+  <link rel="stylesheet" href="./Styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Admin UberEats</h1>
+        <nav>
+            <a href="#" class="nav-link active" data-section="dashboard">Dashboard</a>
+            <a href="#" class="nav-link" data-section="restaurants">Restaurantes</a>
+            <a href="#" class="nav-link" data-section="categories">Categorías</a>
+            <button class="logout-btn">Cerrar sesión</button>
+        </nav>
+      </header>
+    
+      <main>
+        <section id="dashboard" class="section">Bienvenido al panel de administración.</section>
+    
+            <section id="restaurants" class="section hidden">
+                <h2>Gestión de Restaurantes</h2>
+                <button class="btn-add-restaurant" id="btn-add-restaurant">+ Nuevo Restaurante</button>
+                <!-- Modal -->
+                <div id="modal" class="modal-overlay">
+                    <div class="modal-content">
+                        <span class="modal-close">&times;</span>
+                        <h2>Agregar nuevo restaurante</h2>
+                        <form id="addForm">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" required placeholder="Ej: Manuel Burguer">
+
+                            <label for="description">Descripción:</label>
+                            <textarea id="description" rows="3" placeholder="Descripción breve..."></textarea>
+
+                            <label for="openingTime">Hora de apertura:</label>
+                            <input type="time" id="openingTime" required>
+
+                            <label for="closingTime">Hora de cierre:</label>
+                            <input type="time" id="closingTime" required>
+
+                            <label for="deliveryAvailable">¿Tiene delivery?</label>
+                            <select id="deliveryAvailable" required>
+                                <option value="true">Sí</option>
+                                <option value="false">No</option>
+                            </select>
+
+                            <label for="imgUrl">URL de imagen:</label>
+                            <input type="url" id="imgUrl" required placeholder="https://...">
+
+                            <label for="categoryId">Categoría:</label>
+                            <input type="number" id="categoryId" required placeholder="ID de categoría">
+
+                            <label for="active">¿Activo?</label>
+                            <select id="active" required>
+                                <option value="true">Sí</option>
+                                <option value="false">No</option>
+                            </select>
+
+                            <button type="submit" class="btn-primary">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="restaurant-list" class="grid"></div>
+            </section>
+        
+            <section id="categories" class="section hidden">
+                <h2>Gestión de Categorías</h2>
+                <button class="btn-add-category" id="btn-add-category">+ Nueva categoria</button>
+                <!-- Modal -->
+                <div id="modal" class="modal-overlay">
+                    <div class="modal-content">
+                        <span class="modal-close">&times;</span>
+                        <h2>Agregar nuevo restaurante</h2>
+                        <form id="addForm">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" required placeholder="Ej: comida china">
+
+                            <label for="imgUrl">Image Url:</label>
+                            <textarea id="imgUrl" rows="3" placeholder="Url de imagen..."></textarea>
+
+                            <button type="submit" class="btn-primary">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="category-list" class="grid"></div>
+            </section>
+      </main>
+
+    <footer>
+        <p>&copy; 2025 UberEats Admin Panel</p>
+    </footer>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./Main.js"></script>
+</body>
+</html>

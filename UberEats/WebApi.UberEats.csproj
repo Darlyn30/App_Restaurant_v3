@@ -4,9 +4,11 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>a9235ff6-11f2-41a6-8328-a15aa8ed682e</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
   </ItemGroup>
@@ -16,7 +18,6 @@
     <ProjectReference Include="..\UberEats.Core.Domain\UberEats.Core.Domain.csproj" />
     <ProjectReference Include="..\UberEats.Infrastructure.Persistence\UberEats.Infrastructure.Persistence.csproj" />
     <ProjectReference Include="..\UberEats.Infrastructure.Shared\UberEats.Infrastructure.Shared.csproj" />
-    <ProjectReference Include="..\UberEats.Test.UnitTests\UberEats.Test.UnitTests.csproj" />
   </ItemGroup>
 
 </Project>

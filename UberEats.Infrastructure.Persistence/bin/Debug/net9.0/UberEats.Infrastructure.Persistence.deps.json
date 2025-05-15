@@ -12,7 +12,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.4",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.4",
           "UberEats.Core.Application": "1.0.0",
-          "UberEats.Core.Domain": "1.0.0"
+          "UberEats.Core.Domain": "1.0.0",
+          "UberEats.Infrastructure.Shared": "1.0.0"
         },
         "runtime": {
           "UberEats.Infrastructure.Persistence.dll": {}
@@ -1010,6 +1011,19 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "UberEats.Infrastructure.Shared/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
+          "UberEats.Core.Application": "1.0.0",
+          "UberEats.Core.Domain": "1.0.0"
+        },
+        "runtime": {
+          "UberEats.Infrastructure.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1543,6 +1557,11 @@
       "sha512": ""
     },
     "UberEats.Core.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UberEats.Infrastructure.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

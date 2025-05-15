@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UberEats.Core.Application.Interfaces.Services;
@@ -18,25 +19,12 @@ namespace WebApi.UberEats.Controllers
             _userService = userService;
         }
 
-        [HttpGet("{id}")]
-
-        public async Task<IActionResult> GetUserById(int id)
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers()
         {
-            var user = await _userService.GetUserByIdAsync(id);
-            if (user == null)
-                return NotFound();
-
-            return Ok(user);
-        }
-
-        [HttpGet("email/{email}")]
-        public async Task<IActionResult> GetUserByEmail(string email)
-        {
-            var user = await _userService.GetUserByEmailAsync(email);
-            if (user == null)
-                return NotFound();
-
-            return Ok(user);
+            //esto solo es para tener las cuentas de una forma rapida
+            var users = await _userService.GetAllUsersAsync();
+            return Ok(users);
         }
 
         [HttpPost]
@@ -52,6 +40,7 @@ namespace WebApi.UberEats.Controllers
             return Ok("Usuario creado exitosamente.");
         }
 
+        //[Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {

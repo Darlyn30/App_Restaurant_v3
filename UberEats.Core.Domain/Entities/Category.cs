@@ -5,7 +5,6 @@ namespace UberEats.Core.Domain.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
-        public ICollection<Product> Productos { get; set; } = new List<Product>();
+        public string ImgUrl { get; set; }
     }
 }

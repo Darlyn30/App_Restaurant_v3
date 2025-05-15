@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <title>Verificación de Código</title>
+  <link rel="stylesheet" href="./Verification.css">
+</head>
+<body>
+
+    <div class="verification-container">
+        <h1>Debes verificar tu correo</h1> <br>
+        <p>Hemos enviado un código de confirmación al correo: <span id="email-display">*******@gmail.com</span></p> <br>
+    <h2 class="verification-title">Ingrese el código de verificacion</h2>
+    <div class="code-input-container">
+        <input type="text" maxlength="1" class="code-input" id="code1" oninput="moveToNext(this, 'code2')">
+        <input type="text" maxlength="1" class="code-input" id="code2" oninput="moveToNext(this, 'code3')">
+        <input type="text" maxlength="1" class="code-input" id="code3" oninput="moveToNext(this, 'code4')">
+        <input type="text" maxlength="1" class="code-input" id="code4" oninput="moveToNext(this, 'code5')">
+        <input type="text" maxlength="1" class="code-input" id="code5" oninput="moveToNext(this, 'code6')">
+        <input type="text" maxlength="1" class="code-input" id="code6">
+    </div>
+    <button class="verify-button" >Verificar</button>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./Verification.js"></script>
+
+
+</body>
+</html>

@@ -5,12 +5,9 @@ using UberEats.Core.Domain.Entities;
 
 namespace UberEats.Core.Application.Interfaces.Services
 {
-    public interface IUserService
+    public interface IUserService : IGenericService<SaveUserViewModel, UserViewModel>
     {
-        Task<User> GetUserByIdAsync(int userId);
-        Task<User> GetUserByEmailAsync(string email);
-        Task<bool> CreateUserAsync(SaveUserViewModel model);
-        //Task<bool> UpdateUserAsync(UpdateUserViewModel model);
-        Task<bool> DeleteUserAsync(int userId);
+        Task<UserViewModel> Login(LoginViewModel loginVm);
+        Task<List<UserViewModel>> GetByName(string name);
     }
 }

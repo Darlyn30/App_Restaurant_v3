@@ -1,47 +1,29 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using UberEats.Core.Application.Helpers;
 using UberEats.Core.Application.Interfaces.Repositories;
+using UberEats.Core.Application.ViewModels.User;
 using UberEats.Core.Domain.Entities;
+using UberEats.Core.Domain.Settings;
 using UberEats.Infrastructure.Persistence.Contexts;
+using UberEats.Infrastructure.Shared.Services;
 
 namespace UberEats.Infrastructure.Persistence.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository :GenericRepository<User>, IUserRepository
     {
         private readonly ApplicationContext _context;
 
-        public UserRepository(ApplicationContext context)
+        public UserRepository(ApplicationContext context) : base(context)
         {
             _context = context;
         }
 
-        public async Task<User> AddAsync(User user)
+        public override async Task<User> AddAsync(User user)
         {
-            await _context.Users.AddAsync(user);
-            await _context.SaveChangesAsync();
+            user.PasswordHash = PasswordEncryptation.ComputeSha256Hash(user.PasswordHash);
+            await base.AddAsync(user);
             return user;
-        }
-
-        public async Task<bool> DeleteAsync(int userId)
-        {
-            var user = await GetByIdAsync(userId);
-            if (user == null) return false;
-
-            _context.Users.Remove(user);
-            await _context.SaveChangesAsync();
-            return true;
-        }
-
-        public async Task<IEnumerable<User>> GetAllAsync()
-        {
-            var result = await _context.Users.ToListAsync();
-            return result;
-        }
-
-        public async Task<User> GetByIdAsync(int userId)
-        {
-            var result = await _context.Users
-                .FirstOrDefaultAsync(u => u.Id == userId);
-            return result;
         }
 
         public async Task<User> GetByEmailAsync(string email)
@@ -51,10 +33,12 @@ namespace UberEats.Infrastructure.Persistence.Repositories
             return result;
         }
 
-        public async Task<User> UpdateAsync(User user)
+        public async Task<User> LoginAsync(LoginViewModel vm)
         {
-            _context.Users.Update(user);
-            await _context.SaveChangesAsync();
+            string passwordEncrypt = PasswordEncryptation.ComputeSha256Hash(vm.Password);
+            User user = await _context.Set<User>()
+                .FirstOrDefaultAsync(user => user.Email == vm.Email &&  user.PasswordHash == passwordEncrypt);
+
             return user;
         }
     }

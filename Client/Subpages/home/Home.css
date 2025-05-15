@@ -1,0 +1,359 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-bottom: 60px; /* espacio para nav fija */
+}
+  
+.section {
+    padding: 20px;
+}
+  
+.hidden {
+    display: none;
+}
+  
+.search-container {
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+  
+.search-container input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+  
+.search-container button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+  
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+  
+.card-category,
+.restaurant-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.2s;
+}
+  
+.card-category img,
+.restaurant-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.card-category,
+.restaurant-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card-category:hover,
+.restaurant-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+  
+.restaurant-card .open {
+    color: green;
+}
+  
+.restaurant-card .closed {
+    color: red;
+}
+  
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #eee;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+  
+.bottom-nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.bottom-nav a.active {
+    color: #007bff;
+}
+
+
+.food-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+/* Cards de comida */
+.food-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    max-width: 240px;
+}
+  
+.food-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+  
+.food-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+  
+.food-card .info {
+    padding: 12px;
+}
+  
+.food-card .info h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+  
+.food-card .info p {
+    margin: 6px 0;
+    color: #555;
+}
+  
+.food-card .price {
+    font-weight: bold;
+    color: #e91e63;
+}
+
+
+.food-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+  
+.btn-close {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+  
+.btn-close:hover {
+    background-color: #c2185b;
+}
+
+@media (max-width: 768px) {
+    .food-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .food-header h3 {
+      font-size: 1.2rem;
+    }
+  
+    .btn-close {
+      align-self: stretch;
+      text-align: center;
+    }
+  
+    .grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+  
+    .food-card img {
+      height: 140px;
+      object-fit: cover;
+    }
+}
+  
+@media (max-width: 480px) {
+    .food-header h3 {
+      font-size: 1rem;
+    }
+
+    .btn-close {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+    }
+  
+    .food-card .info p {
+      font-size: 0.85rem;
+    }
+}
+
+#cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+  
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+}
+  
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+  
+.cart-item-info {
+    flex-grow: 1;
+}
+
+/* account section */
+
+.account-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.account-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.account-card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+  
+.account-info {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.account-info p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #555;
+}
+  
+.logout-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+  
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+.add-to-cart-btn{
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover{
+    background-color: #218838;
+}
+
+#cart-icon {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background-color: #ff6347;
+  color: white;
+  border-radius: 50%;
+  padding: 12px;
+  z-index: 1000;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#cart-icon:hover {
+  background-color: #e5533d;
+}
+
+#cart-icon i {
+  font-size: 20px;
+}
+
+#cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: white;
+  color: #ff6347;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+  
+  

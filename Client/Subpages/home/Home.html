@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>App de Comida</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="./Home.css" />
+</head>
+<body>
+
+  <!-- INICIO -->
+  <section id="home-section" class="section">
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Busca restaurantes, comida o cuisines..."/>
+      <button id="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div id="cart-icon">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count">0</span>
+    </div>
+
+    <!-- <h2>Categorías</h2>
+    <div id="category-list" class="grid">
+        
+    </div> -->
+
+    <h2>Restaurantes</h2>
+    <div id="restaurant-list" class="grid">
+        <!-- CONTENIDO DINAMICO -->
+    </div>
+  </section>
+
+  <!-- HISTORIAL -->
+  <section id="history-section" class="section hidden">
+    <h2>Historial</h2>
+    <p>No tienes historial aún.</p>
+  </section>
+
+  <!-- PEDIDOS -->
+  <section id="orders-section" class="section hidden">
+    <h2>Pedidos</h2>
+    <ul>
+      <li>Pedido #123 - Pizza Express - Entregado</li>
+      <li>Pedido #124 - Sushi World - En camino</li>
+    </ul>
+  </section>
+
+  <!-- CUENTA -->
+  <section id="account-section" class="section hidden">
+    <div class="account-card">
+      <h2>👤 Cuenta del Usuario</h2>
+      <div class="account-info">
+        <p><strong>Nombre:</strong> <span id="user-name"></span></p>
+        <p><strong>Email:</strong> <span id="user-email"></span></p>
+      </div>
+      <button class="logout-btn">Cerrar sesión</button>
+    </div>
+  </section>
+
+  <section id="cart-section" class="section hidden">
+    <h2>Mi carrito</h2>
+    <div id="cart-items"></div>
+    <p id="cart-total">Total: $0.00</p>
+    <button id="checkout-btn">Finalizar compra</button>
+  </section>
+
+  <!-- NAVEGACIÓN -->
+  <footer class="bottom-nav">
+    <a href="#" class="nav-link active" data-section="home-section"><i class="fas fa-home"></i> Inicio</a>
+    <a href="#" class="nav-link" data-section="history-section"><i class="fas fa-history"></i> Historial</a>
+    <a href="#" class="nav-link" data-section="orders-section"><i class="fas fa-box"></i> Pedidos</a>
+    <a href="#" class="nav-link" data-section="account-section"><i class="fas fa-user"></i> Cuenta</a>
+  </footer>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="./Home.js"></script>
+</body>
+</html>

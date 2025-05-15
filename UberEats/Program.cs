@@ -68,9 +68,9 @@ app.UseAuthorization();
 
 app.UseCors(policy =>
 {
-    policy.AllowAnyOrigin()
-          .AllowAnyMethod()
-          .AllowAnyHeader();
+    policy.AllowAnyOrigin();
+    policy.AllowAnyMethod();
+    policy.AllowAnyHeader();
 });
 app.MapControllers();
 

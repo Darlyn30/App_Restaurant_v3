@@ -79,7 +79,7 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
 //logica de la web app
 
 // Nuevo eventListener para manejar el inicio de sesión y el registro
-document.getElementById('authForm').addEventListener('submit', function(event) {
+document.getElementById('authForm').addEventListener('submit', async function(event) {
   // Solo proceder si el correo es válido (ya lo verificaste en el listener anterior)
   const email = document.getElementById('email').value;
   if (!email.endsWith('@gmail.com')) {
@@ -101,55 +101,31 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
         Email: emailValue,
         Password: passwordValue
       }
+      try {
+          const data = await apiCall(URLS.URL_LOGIN, "POST", dataLogin); // auth = false
 
-      fetch(URLS.URL_LOGIN, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(dataLogin)
-      })
-      .then(async response => {
-        const data = await response.json();
-        if(response.status === 401){
-          const message = data.message || "No autorizado";
+          console.log("Token:", data.token);
+          console.log("perfil: ", data.userVm);
+          localStorage.setItem("token", JSON.stringify(data.token));
+          localStorage.setItem("account", JSON.stringify(data.userVm));
+          const user = data.userVm;
+
           swal({
-            title: "Ha ocurrido un error",
-            text: message,
-            icon: "warning",
-          })
-          .then(res => {
-            return;
-          })
-        }
-        console.log("Token:", data.token);
-        console.log("perfil: ", data.userVm);
-        localStorage.setItem("token", JSON.stringify(data.token));
-        localStorage.setItem("account", JSON.stringify(data.userVm));
-        let user = JSON.parse(localStorage.getItem("account"));
-        
-
-        swal({
-          title: "Inicio de sesion exitoso!",
-          text: "Bienvenido " +data.userVm.name + "!",
-          icon: "success",
-        })
-        .then(res => {
-
-          
-          if(!user.isActive == true){
-            window.location = "../subpages/Verification.html";
-          }
-
-          if(user.role === "Client"){
-            window.location = "../subpages/home/Home.html";
-          } else {
-            window.location = "../subpages/Admin/Index.html";
-          }
-
-        });
-      })
-      .catch(error => console.error("Catch error:", error));
+              title: "Inicio de sesión exitoso!",
+              text: `Bienvenido ${user.name}!`,
+              icon: "success"
+          }).then(() => {
+              if (!user.isActive) {
+                  window.location = "../subpages/Verification.html";
+              } else if (user.role === "Client") {
+                  window.location = "../subpages/home/Home.html";
+              } else {
+                  window.location = "../subpages/Admin/Index.html";
+              }
+          });
+      } catch (error) {
+          swal("Ha ocurrido un error", error.message, "warning");
+      }
       //#region signup
   } else {
       // Modo: Registro
@@ -163,38 +139,46 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
       };
       console.log('Datos de registro:', registerData);
 
-      fetch(URLS.URL_SIGN_UP, {
-        method: 'POST',
+    if (!nameValue || !emailValue || !passwordValue || !confirmPasswordValue) {
+        return swal("ERROR!", "No puede haber campos vacíos", "warning");
+    }
+
+    if (passwordValue !== confirmPasswordValue) {
+        return swal("ERROR!", "Las contraseñas no coinciden", "warning");
+    }
+
+    try {
+        const data = await apiCall(URLS.URL_SIGN_UP, "POST", registerData, false); // auth = false
+
+        swal("Cuenta creada con éxito", "Redirigiendo a verificación...", "success")
+            .then(() => {
+                window.location = "../subpages/verification/Verification.html";
+            });
+    } catch (error) {
+        swal("Error al registrar", error.message, "error");
+    }
+      }
+    });
+
+async function apiCall(url, method, body = null) {
+    const options = {
+        method,
         headers : {
-          'Content-Type' : 'application/json'
-        },
-        body: JSON.stringify(registerData)
-      })
-      .then(res => {
-        if(registerData.name == "" || registerData.email == "" || registerData.password == "" || confirmPasswordValue == ""){
-          swal({
-            title: "ERROR!",
-            text: "no puede haber campos vacíos \n O no podemos encontrar su cuenta \n O crea una",
-            icon: "warning",
-          });
-        } else if(registerData.password != confirmPasswordValue){
-          swal({
-            title: "ERROR!",
-            text: "Las contraseñas no coinciden",
-            icon: "warning",
-          });
-        } else {
-          console.log("success", res);
-        
-          swal({
-              title: "Cuenta creada con exito!",
-              text: "Su cuenta ha sido creada exitosamente!",
-              icon: "success",
-          })
-          .then(res => {
-              window.location = "../subpages/verification/Verification.html";
-          });
+            "Content-Type" : "application/json"
         }
-      })
-  }
-});
+    }
+
+    if(body) options.body = JSON.stringify(body);
+
+    try {
+        const res = await fetch(url, options);
+
+        const data = res.json();
+        if(!res.ok) throw new Error(data.message || "");
+
+        return data;
+    } catch(err){
+        console.error("Error en la peticion: ", err.message);
+        throw err;
+    }
+}

@@ -1116,15 +1116,6 @@
         "runtime": {
           "bin/placeholder/UberEats.Infrastructure.Shared.dll": {}
         }
-      },
-      "UberEats.Test.UnitTests/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/UberEats.Test.UnitTests.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/UberEats.Test.UnitTests.dll": {}
-        }
       }
     }
   },
@@ -2997,11 +2988,6 @@
       "type": "project",
       "path": "../UberEats.Infrastructure.Shared/UberEats.Infrastructure.Shared.csproj",
       "msbuildProject": "../UberEats.Infrastructure.Shared/UberEats.Infrastructure.Shared.csproj"
-    },
-    "UberEats.Test.UnitTests/1.0.0": {
-      "type": "project",
-      "path": "../UberEats.Test.UnitTests/UberEats.Test.UnitTests.csproj",
-      "msbuildProject": "../UberEats.Test.UnitTests/UberEats.Test.UnitTests.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3012,8 +2998,7 @@
       "UberEats.Core.Application >= 1.0.0",
       "UberEats.Core.Domain >= 1.0.0",
       "UberEats.Infrastructure.Persistence >= 1.0.0",
-      "UberEats.Infrastructure.Shared >= 1.0.0",
-      "UberEats.Test.UnitTests >= 1.0.0"
+      "UberEats.Infrastructure.Shared >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3059,9 +3044,6 @@
             },
             "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj": {
               "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj"
-            },
-            "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Test.UnitTests\\UberEats.Test.UnitTests.csproj": {
-              "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Test.UnitTests\\UberEats.Test.UnitTests.csproj"
             }
           }
         }

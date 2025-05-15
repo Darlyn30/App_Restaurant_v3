@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UberEats.Infrastructure.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8700b7cc7cd7e7f2421e7ad3afaea207c77ec0a7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cea0d35efe0f44d5bbee29f61ceee1ca7063af9")]
 [assembly: System.Reflection.AssemblyProductAttribute("UberEats.Infrastructure.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UberEats.Infrastructure.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

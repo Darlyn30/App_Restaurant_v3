@@ -317,22 +317,6 @@
         }
       }
     },
-    "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Test.UnitTests\\UberEats.Test.UnitTests.csproj": {
-      "restore": {
-        "projectUniqueName": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Test.UnitTests\\UberEats.Test.UnitTests.csproj",
-        "projectName": "UberEats.Test.UnitTests",
-        "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Test.UnitTests\\UberEats.Test.UnitTests.csproj",
-        "UsingMicrosoftNETSdk": false,
-        "frameworks": {
-          "net472": {
-            "projectReferences": {}
-          }
-        }
-      },
-      "frameworks": {
-        "net472": {}
-      }
-    },
     "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats\\WebApi.UberEats.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -372,9 +356,6 @@
               },
               "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj": {
                 "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj"
-              },
-              "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Test.UnitTests\\UberEats.Test.UnitTests.csproj": {
-                "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Test.UnitTests\\UberEats.Test.UnitTests.csproj"
               }
             }
           }

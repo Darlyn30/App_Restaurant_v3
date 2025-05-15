@@ -17,15 +17,15 @@
   },
   {
     "ContainingType": "WebApi.UberEats.Controllers.CartController",
-    "Method": "GetCartByUser",
-    "RelativePath": "api/Cart/{email}",
-    "HttpMethod": "GET",
+    "Method": "AddItemToCart",
+    "RelativePath": "api/Cart/add-item",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "email",
-        "Type": "System.String",
+        "Name": "cartItem",
+        "Type": "UberEats.Core.Domain.Entities.CartItem",
         "IsRequired": true
       }
     ],
@@ -33,26 +33,42 @@
   },
   {
     "ContainingType": "WebApi.UberEats.Controllers.CartController",
-    "Method": "AddToCart",
-    "RelativePath": "api/Cart/add",
-    "HttpMethod": "POST",
+    "Method": "GetCart",
+    "RelativePath": "api/Cart/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.UberEats.Controllers.CartController",
+    "Method": "RemoveItemFromCart",
+    "RelativePath": "api/Cart/remove-item/{cartItemId}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "foodId",
+        "Name": "cartItemId",
         "Type": "System.Int32",
-        "IsRequired": false
-      },
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.UberEats.Controllers.CartController",
+    "Method": "UpdateItemInCart",
+    "RelativePath": "api/Cart/update-item",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Name": "quantity",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "cartItem",
+        "Type": "UberEats.Core.Domain.Entities.CartItem",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -352,21 +368,5 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "WebApi.UberEats.Controllers.CartController",
-    "Method": "RemoveFromCart",
-    "RelativePath": "item/{itemId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "itemId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
   }
 ]

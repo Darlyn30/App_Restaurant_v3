@@ -14,8 +14,7 @@
           "UberEats.Core.Application": "1.0.0",
           "UberEats.Core.Domain": "1.0.0",
           "UberEats.Infrastructure.Persistence": "1.0.0",
-          "UberEats.Infrastructure.Shared": "1.0.0",
-          "UberEats.Test.UnitTests": "1.0.0"
+          "UberEats.Infrastructure.Shared": "1.0.0"
         },
         "runtime": {
           "WebApi.UberEats.dll": {}
@@ -690,22 +689,6 @@
             "fileVersion": "1.0.0.0"
           }
         }
-      },
-      "UberEats.Test.UnitTests/1.0.0": {
-        "runtime": {
-          "UberEats.Test.UnitTests.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "Microsoft.VisualStudio.TestPlatform.TestFramework/14.0.0.0": {
-        "runtime": {
-          "Microsoft.VisualStudio.TestPlatform.TestFramework.dll": {
-            "assemblyVersion": "14.0.0.0",
-            "fileVersion": "14.0.7126.11"
-          }
-        }
       }
     }
   },
@@ -1138,16 +1121,6 @@
     },
     "UberEats.Infrastructure.Shared/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "UberEats.Test.UnitTests/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.VisualStudio.TestPlatform.TestFramework/14.0.0.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

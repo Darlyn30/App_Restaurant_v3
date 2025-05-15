@@ -27,27 +27,6 @@ namespace WebApi.UberEats.Controllers
             return Ok(users);
         }
 
-        [HttpGet("{id}")]
-
-        public async Task<IActionResult> GetUserById(int id)
-        {
-            var user = await _userService.GetUserByIdAsync(id);
-            if (user == null)
-                return NotFound();
-
-            return Ok(user);
-        }
-
-        [HttpGet("email/{email}")]
-        public async Task<IActionResult> GetUserByEmail(string email)
-        {
-            var user = await _userService.GetUserByEmailAsync(email);
-            if (user == null)
-                return NotFound();
-
-            return Ok(user);
-        }
-
         [HttpPost]
         public async Task<IActionResult> CreateUser([FromBody] SaveUserViewModel model)
         {

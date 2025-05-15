@@ -18,7 +18,6 @@
     <ProjectReference Include="..\UberEats.Core.Domain\UberEats.Core.Domain.csproj" />
     <ProjectReference Include="..\UberEats.Infrastructure.Persistence\UberEats.Infrastructure.Persistence.csproj" />
     <ProjectReference Include="..\UberEats.Infrastructure.Shared\UberEats.Infrastructure.Shared.csproj" />
-    <ProjectReference Include="..\UberEats.Test.UnitTests\UberEats.Test.UnitTests.csproj" />
   </ItemGroup>
 
 </Project>

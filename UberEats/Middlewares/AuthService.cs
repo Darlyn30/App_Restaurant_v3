@@ -31,22 +31,18 @@ namespace UberEats.Core.Application.Services
                 new Claim(ClaimTypes.Name, user.Name),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Role, user.Role),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim("expireMinutes", _config["Jwt:ExpireMinutes"])
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var expiresInMinutes = int.TryParse(_config["Jwt:ExpireMinutes"], out var minutes)
-                ? minutes
-                : 60; // valor por defecto
 
             var token = new JwtSecurityToken(
                 issuer: _config["Jwt:Issuer"],
                 audience: _config["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(expiresInMinutes),
+                expires: DateTime.UtcNow.AddHours(1),
                 signingCredentials: creds
             );
 

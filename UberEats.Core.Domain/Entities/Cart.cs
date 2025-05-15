@@ -7,5 +7,7 @@ namespace UberEats.Core.Domain.Entities
         public int UserId { get; set; }
         public DateTime CreationAt { get; set; }
 
+        public ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
+
     }
 }

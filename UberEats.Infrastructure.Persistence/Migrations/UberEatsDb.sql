@@ -107,14 +107,12 @@ SELECT * FROM Foods
 /*
 INSERT INTO Foods (Name, Description, Price, RestaurantId, Active, ImgUrl)
 VALUES
-('Hamburguesa Clásica', 'Hamburguesa con carne de res, queso, lechuga, tomate y mayonesa.', 8.50, 2, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXuYk7rahziwq_gxtaQuTOMrAISJr3gFcHCg&s'),
-('Papas Fritas', 'Papas fritas crujientes servidas con ketchup y mayonesa.', 3.00, 1, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv_T8aU39CEZuT0wkdzrsp7rJPz2d2r8Vw3Q&s'),
-('Hot Dog', 'Pan de hot dog con salchicha, mostaza, ketchup y cebolla.', 5.00, 5, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxpflsD0jMI0GAphrYu-UM5N5JTwwatec-RQ&s'),
-('Tacos', 'Tortillas de maíz rellenas de carne de res, pollo o cerdo, cebolla, cilantro y salsa.', 7.00, 3, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQppb6fWNQFq8_FtUkllEyATzWrq6l9ooJJrA&s'),
-('Pizza Margarita', 'Pizza con salsa de tomate, queso mozzarella y albahaca fresca.', 12.00, 5, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTUVlOnkavE0RG6TiM9LEyDZ7nzZ9kNA8jOQ&s')
+('Hamburguesa Clásica', 'Hamburguesa con carne de res, queso, lechuga, tomate y mayonesa.', 8.50, 4, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXuYk7rahziwq_gxtaQuTOMrAISJr3gFcHCg&s'),
+('Papas Fritas', 'Papas fritas crujientes servidas con ketchup y mayonesa.', 3.00, 6, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv_T8aU39CEZuT0wkdzrsp7rJPz2d2r8Vw3Q&s'),
+('Hot Dog', 'Pan de hot dog con salchicha, mostaza, ketchup y cebolla.', 5.00, 8, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxpflsD0jMI0GAphrYu-UM5N5JTwwatec-RQ&s'),
+('Tacos', 'Tortillas de maíz rellenas de carne de res, pollo o cerdo, cebolla, cilantro y salsa.', 7.00, 6, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQppb6fWNQFq8_FtUkllEyATzWrq6l9ooJJrA&s'),
+('Pizza Margarita', 'Pizza con salsa de tomate, queso mozzarella y albahaca fresca.', 12.00, 8, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTUVlOnkavE0RG6TiM9LEyDZ7nzZ9kNA8jOQ&s')
 */
-
-
 
 
 CREATE TABLE Carts
@@ -124,6 +122,13 @@ CREATE TABLE Carts
 	CreationAt DATETIME DEFAULT GETDATE(),
 	FOREIGN KEY (UserId) REFERENCES Users(Id)
 )
+SELECT * FROM Carts
+
+INSERT INTO Carts (UserId)
+VALUES (1)
+
+INSERT INTO CartItems (CartId, FoodId, Quantity, Price)
+VALUES (2, 8, 2, 10.50)
 
 CREATE TABLE CartItems
 (
@@ -131,9 +136,22 @@ CREATE TABLE CartItems
 	CartId INT NOT NULL,
 	FoodId INT NOT NULL,
 	Quantity INT NOT NULL CHECK (Quantity > 0),
-	Price DECIMAL(10,2) NOT NULL
+	Price DECIMAL(10,2) NOT NULL,
+	ImgUrl VARCHAR(MAX)
 	FOREIGN KEY(CartId) REFERENCES Carts(Id) ON DELETE CASCADE,
 	FOREIGN KEY(FoodId) REFERENCES Foods(Id)
+)
+
+SELECT * FROM CartItems
+
+UPDATE CartItems
+SET ImgUrl  = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQppb6fWNQFq8_FtUkllEyATzWrq6l9ooJJrA&s'
+WHERE Id = 2
+
+CREATE TABLE Payments
+(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	PaymentName VARCHAR(50) --Efectivo -Tarjeta -Paypal
 )
 
 

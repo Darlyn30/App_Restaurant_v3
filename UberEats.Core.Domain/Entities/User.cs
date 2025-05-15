@@ -15,8 +15,5 @@ namespace UberEats.Core.Domain.Entities
         public string Role { get; set; }
         public string Pin {  get; set; }
         public bool IsActive { get; set; }
-        //public string Token {  get; set; }
-
-        //public ICollection<Order> Orders { get; set; } = new List<Order>();s
     }
 }

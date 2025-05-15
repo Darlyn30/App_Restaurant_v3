@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZeVSvcOCUQE=",
+  "dgSpecHash": "9BwCqEEWXZs=",
   "success": true,
-  "projectFilePath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj",
+  "projectFilePath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\darly\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.4\\microsoft.extensions.configuration.abstractions.9.0.4.nupkg.sha512",
     "C:\\Users\\darly\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",

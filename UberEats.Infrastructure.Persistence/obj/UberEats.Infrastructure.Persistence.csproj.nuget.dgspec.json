@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj": {}
+    "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj": {}
   },
   "projects": {
-    "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj": {
+    "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj",
+        "projectUniqueName": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj",
         "projectName": "UberEats.Core.Application",
-        "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj",
+        "projectPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj",
         "packagesPath": "C:\\Users\\darly\\.nuget\\packages\\",
-        "outputPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Application\\obj\\",
+        "outputPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj": {
-                "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj"
+              "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj": {
+                "projectPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj"
               }
             }
           }
@@ -48,7 +48,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -79,18 +79,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj": {
+    "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj",
         "projectName": "UberEats.Core.Domain",
-        "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj",
+        "projectPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj",
         "packagesPath": "C:\\Users\\darly\\.nuget\\packages\\",
-        "outputPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Domain\\obj\\",
+        "outputPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -123,7 +123,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -144,18 +144,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj": {
+    "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj",
         "projectName": "UberEats.Infrastructure.Persistence",
-        "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj",
+        "projectPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj",
         "packagesPath": "C:\\Users\\darly\\.nuget\\packages\\",
-        "outputPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Persistence\\obj\\",
+        "outputPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Infrastructure.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -176,14 +176,14 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj": {
-                "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj"
+              "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj": {
+                "projectPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj"
               },
-              "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj": {
-                "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj"
+              "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj": {
+                "projectPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj"
               },
-              "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj": {
-                "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj"
+              "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj": {
+                "projectPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj"
               }
             }
           }
@@ -198,7 +198,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -235,18 +235,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj": {
+    "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj",
         "projectName": "UberEats.Infrastructure.Shared",
-        "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj",
+        "projectPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\UberEats.Infrastructure.Shared.csproj",
         "packagesPath": "C:\\Users\\darly\\.nuget\\packages\\",
-        "outputPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\obj\\",
+        "outputPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Infrastructure.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -267,11 +267,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj": {
-                "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj"
+              "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj": {
+                "projectPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Application\\UberEats.Core.Application.csproj"
               },
-              "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj": {
-                "projectPath": "D:\\programacion\\C#\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj"
+              "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj": {
+                "projectPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant_v3\\UberEats.Core.Domain\\UberEats.Core.Domain.csproj"
               }
             }
           }
@@ -286,7 +286,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -313,7 +313,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

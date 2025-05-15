@@ -14,85 +14,81 @@ namespace UberEats.Core.Application.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-        private readonly IPasswordHasher _passwordHasher;
-        private readonly ISendEmailService _emailService;
-        PinRandomService _random = PinRandomService.Instance();
-        MailModel _mailModel = new MailModel();
-        private readonly IConfiguration _config;
 
-        public UserService(IUserRepository userRepository, IPasswordHasher passwordHasher, ISendEmailService emailService, IConfiguration config)
+        public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
-            _passwordHasher = passwordHasher;
-            _emailService = emailService;
-            _config = config;
         }
 
-        public async Task<bool> CreateUserAsync(SaveUserViewModel model)
+        public async Task<SaveUserViewModel> Add(SaveUserViewModel vm)
         {
-            var existingUser = await _userRepository.GetByEmailAsync(model.Email);
-            if (existingUser != null)
-            {
-                return false; // User already exists
-            }
-
-            var pin = _random.pinRandom();
-            var user = new User
-            {
-                Name = model.Name,
-                PasswordHash = _passwordHasher.HashPassword(model.Password),
-                Email = model.Email,
-                Pin = pin,
-                Role = "Client"
-            };
-
-
-            _mailModel.To = model.Email;
-            _mailModel.SupportEmail = _config.GetSection("EmailSettings:Email").Value;
-
-            string body = $"<html><body>" +
-             $"<p>Estimado/a {model.Name},</p>" +
-             $"<p>Gracias por registrarte en {_mailModel.EnterpriseName}. Para garantizar la seguridad de tu cuenta, hemos generado un código de verificación único.</p>" +
-             $"<p><strong>Tu código de verificación es:</strong></p>" +
-             $"<p style=\"font-size: 18px; font-weight: bold; color: #2C3E50;\">{pin}</p>" +
-             $"<p>Por favor, ingresa este código en el formulario de nuestra aplicación para completar el proceso de verificación.</p>" +
-             $"<p>Si no solicitaste este código, por favor ignora este correo.</p>" +
-             $"<p>En caso de cualquier duda, no dudes en ponerte en contacto con nosotros a través de <a href=\"mailto:{_mailModel.SupportEmail}\">{_mailModel.SupportEmail}</a>.</p>" +
-             $"<p>¡Gracias por confiar en {_mailModel.EnterpriseName}!</p>" +
-             $"<br><p>Atentamente,</p>" +
-             $"<p>El equipo de {_mailModel.EnterpriseName}</p>" +
-             $"<p><a href=\"{_mailModel.WebSite}\" target=\"_blank\">Visita nuestro sitio web</a></p>" +
-             $"</body></html>";
+            User user = new();
+            user.IsActive = false;
+            user.Name = vm.Name;
+            user.Email = vm.Email;
+            user.Role = vm.Role;
+            user.PasswordHash = PasswordEncryptation.ComputeSha256Hash(vm.Password);
 
             await _userRepository.AddAsync(user);
-            await _emailService.sendEmail(_mailModel.To, _mailModel.Subject, body);
-            return true;
+
+            SaveUserViewModel userVm = new();
+
+            userVm.Id = user.Id;
+            userVm.Password = user.PasswordHash;
+            userVm.Email = user.Email;
+            userVm.Role = user.Role;
+            userVm.isActive = user.IsActive;
+            return userVm;
         }
 
-        public async Task<bool> DeleteUserAsync(int userId)
+        public async Task delete(int id)
         {
+            var entity = await _userRepository.GetByIdAsync(id);
             
-            await _userRepository.DeleteAsync(userId);
-
-            return true;
+            await _userRepository.DeleteAsync(entity);
         }
 
-        public async Task<User> GetUserByIdAsync(int userId)
+        public Task<IEnumerable<SaveUserViewModel>> GetAllViewModel()
         {
-            var result = await _userRepository.GetByIdAsync(userId);
-            return result;
+            throw new NotImplementedException();
         }
 
-        public async Task<User> GetUserByEmailAsync(string email)
+        public Task<SaveUserViewModel> GetByIdSaveViewModel(int id)
         {
-            var result = await _userRepository.GetByEmailAsync(email);
-            return result;
+            throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<User>> GetAllUsersAsync()
+        public Task<List<UserViewModel>> GetByName(string name)
         {
-            var result = await _userRepository.GetAllUserAsync();
-            return result;
+            throw new NotImplementedException();
+        }
+
+        public async Task<UserViewModel> Login(LoginViewModel loginVm)
+        {
+            UserViewModel userVm = new();
+            User user = await _userRepository.LoginAsync(loginVm);
+
+            if (user == null)
+                return null;
+
+            userVm.Id = user.Id;
+            userVm.Email = user.Email;
+            userVm.Name = user.Name;
+            userVm.Role = user.Role;
+
+            return userVm;
+        }
+
+        public async Task Update(SaveUserViewModel vm)
+        {
+            User user = await _userRepository.GetByIdAsync(vm.Id);
+            user.Id = vm.Id;
+            user.Name = vm.Name;
+            user.Email = vm.Email;
+            user.PasswordHash = PasswordEncryptation.ComputeSha256Hash(vm.Password);
+            user.Role = vm.Role;
+
+            await _userRepository.UpdateAsync(user);
         }
     }
 }

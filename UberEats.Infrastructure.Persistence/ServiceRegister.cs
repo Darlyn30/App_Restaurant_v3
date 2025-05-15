@@ -20,6 +20,7 @@ namespace UberEats.Infrastructure.Persistence
             #endregion
 
             #region repositories
+            services.AddTransient(typeof(IGenericRepository<>, typeof(GenericRepository<>));
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IVerifyAccountRepository, VerifyAccountRepository>();
             #endregion
